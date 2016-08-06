@@ -1,11 +1,9 @@
-﻿
-
+﻿using SharpNeuron.Initializers;
 using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
-using NeuronDotNet.Core.Initializers;
 
-namespace NeuronDotNet.Core
+namespace SharpNeuron
 {
     /// <summary>
     /// A connector represents a collection of synapses connecting two layers in a network.
@@ -70,7 +68,7 @@ namespace NeuronDotNet.Core
         }
 
         /// <summary>
-        /// Gets the number of synapses in the connector. 
+        /// Gets the number of synapses in the connector.
         /// </summary>
         /// <value>
         /// Synapse Count. It is always positive.
@@ -180,6 +178,7 @@ namespace NeuronDotNet.Core
                 case ConnectionMode.Complete:
                     synapses = new TSynapse[sourceLayer.NeuronCount * targetLayer.NeuronCount];
                     break;
+
                 case ConnectionMode.OneOne:
                     if (sourceLayer.NeuronCount == targetLayer.NeuronCount)
                     {

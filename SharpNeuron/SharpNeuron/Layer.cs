@@ -1,10 +1,9 @@
-﻿
+﻿using SharpNeuron.LearningRateFunctions;
 using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
-using NeuronDotNet.Core.LearningRateFunctions;
 
-namespace NeuronDotNet.Core
+namespace SharpNeuron
 {
     /// <summary>
     /// Layer is an abstract container for similar neurons. No two neurons within a layer can be
@@ -172,7 +171,7 @@ namespace NeuronDotNet.Core
         protected Layer(int neuronCount)
         {
             Helper.ValidatePositive(neuronCount, "neuronCount");
-            
+
             this.neurons = new TNeuron[neuronCount];
             this.learningRateFunction = new LinearFunction(0.3d, 0.05d);
         }

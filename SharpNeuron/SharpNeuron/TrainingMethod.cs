@@ -1,6 +1,4 @@
-﻿
-
-namespace NeuronDotNet.Core
+﻿namespace SharpNeuron
 {
     /// <summary>
     /// Method of training used to train the network

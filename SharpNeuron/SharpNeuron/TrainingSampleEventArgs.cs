@@ -1,8 +1,6 @@
-﻿
+﻿using System;
 
-using System;
-
-namespace NeuronDotNet.Core
+namespace SharpNeuron
 {
     /// <summary>
     /// Training Sample Event Handler. This is used by events associated with training samples.

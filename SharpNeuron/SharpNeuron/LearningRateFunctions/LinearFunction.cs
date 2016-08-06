@@ -1,9 +1,7 @@
-﻿
-
-using System;
+﻿using System;
 using System.Runtime.Serialization;
 
-namespace NeuronDotNet.Core.LearningRateFunctions
+namespace SharpNeuron.LearningRateFunctions
 {
     /// <summary>
     /// Linear Learning Rate Function. As the training progresses, the learning rate uniformly

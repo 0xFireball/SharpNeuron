@@ -1,6 +1,4 @@
-﻿
-
-namespace NeuronDotNet.Core.SOM
+﻿namespace SharpNeuron.SOM
 {
     /// <summary>
     /// Lattice Topology of the position neurons in a Kohonen Layer
@@ -21,8 +19,6 @@ namespace NeuronDotNet.Core.SOM
         /// Each neuron has four immediate neighbors
         /// </summary>
         Rectangular = 0,
-
-
 
         // Arrangement of neurons in a hexagonal lattice
         //

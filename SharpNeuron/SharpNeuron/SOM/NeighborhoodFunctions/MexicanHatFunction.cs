@@ -1,9 +1,7 @@
-﻿
-
-using System;
+﻿using System;
 using System.Runtime.Serialization;
 
-namespace NeuronDotNet.Core.SOM.NeighborhoodFunctions
+namespace SharpNeuron.SOM.NeighborhoodFunctions
 {
     /// <summary>
     /// Mexican Hat Neighborhood Function is the normalized second derivative of a Gaussian function.
@@ -14,7 +12,7 @@ namespace NeuronDotNet.Core.SOM.NeighborhoodFunctions
     [Serializable]
     public sealed class MexicanHatFunction : INeighborhoodFunction
     {
-        /* 
+        /*
          *  Mexican Hat Function = a * (1 - ((x-b)/c)square) * Exp( - 1/2 * ((x-b)/c)square)
          *
          *  The parameter 'a' is the height of the curve's peak, 'b' is the position of the center of
@@ -26,7 +24,7 @@ namespace NeuronDotNet.Core.SOM.NeighborhoodFunctions
          *  c = depends on training progress.
          *
          *  Initial value of c is obtained from the user (as learning radius)
-         *  Note that, (x-b)square denotes the euclidean distance between winner neuron 'b' and neuron 'x' 
+         *  Note that, (x-b)square denotes the euclidean distance between winner neuron 'b' and neuron 'x'
          *
          *  (Mexican hat function) vs (Hamming distance)
          *                         _
@@ -58,7 +56,7 @@ namespace NeuronDotNet.Core.SOM.NeighborhoodFunctions
         /// </param>
         public MexicanHatFunction(int learningRadius)
         {
-            // Full Width at Half Maximum for a Mexican Hat curve 
+            // Full Width at Half Maximum for a Mexican Hat curve
             //        = 1.2518753 * sigma
             // Full Width at Half Maximum (FWHM) is nothing but learning diameter
             // so, learning radius = 0.62593765 * sigma

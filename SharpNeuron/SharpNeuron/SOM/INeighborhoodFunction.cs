@@ -1,8 +1,6 @@
-﻿
+﻿using System.Runtime.Serialization;
 
-using System.Runtime.Serialization;
-
-namespace NeuronDotNet.Core.SOM
+namespace SharpNeuron.SOM
 {
     /// <summary>
     /// This interface represents a neighborhood function. A neighborhood function determines

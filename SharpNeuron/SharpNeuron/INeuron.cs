@@ -1,8 +1,6 @@
-﻿
+﻿using System.Collections.Generic;
 
-using System.Collections.Generic;
-
-namespace NeuronDotNet.Core
+namespace SharpNeuron
 {
     /// <summary>
     /// Interface representing a neuron. A neuron is a basic building block of a neural network.

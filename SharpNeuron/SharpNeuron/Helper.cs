@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NeuronDotNet.Core
+namespace SharpNeuron
 {
     /// <summary>
     /// This static class contains all helper functions used in this project.

@@ -1,9 +1,7 @@
-﻿
-
-using System;
+﻿using System;
 using System.Runtime.Serialization;
 
-namespace NeuronDotNet.Core.Backpropagation
+namespace SharpNeuron.Backpropagation
 {
     /// <summary>
     /// This class extends a <see cref="Network"/> and represents a Backpropagation neural network.
@@ -156,7 +154,7 @@ namespace NeuronDotNet.Core.Backpropagation
             meanSquaredError += (outputLayer as ActivationLayer).SetErrors(trainingSample.OutputVector);
 
             // Backpropagate errors
-            for (int i = layerCount; i > 0; )
+            for (int i = layerCount; i > 0;)
             {
                 ActivationLayer layer = layers[--i] as ActivationLayer;
                 if (layer != null)

@@ -1,9 +1,8 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
-namespace NeuronDotNet.Core
+namespace SharpNeuron
 {
     /// <summary>
     /// <para>
@@ -140,7 +139,7 @@ namespace NeuronDotNet.Core
         {
             get
             {
-                for(int i = 0; i < layers.Count; i++)
+                for (int i = 0; i < layers.Count; i++)
                 {
                     yield return layers[i];
                 }
@@ -176,7 +175,7 @@ namespace NeuronDotNet.Core
         }
 
         /// <summary>
-        /// Exposes an enumerator to iterate over connectors in the network. 
+        /// Exposes an enumerator to iterate over connectors in the network.
         /// </summary>
         /// <value>
         /// Connector Enumerator. No connector in a network can be <c>null</c>.
@@ -241,12 +240,12 @@ namespace NeuronDotNet.Core
             Helper.ValidateNotNull(inputLayer, "inputLayer");
             Helper.ValidateNotNull(outputLayer, "outputLayer");
             Helper.ValidateEnum(typeof(TrainingMethod), trainingMethod, "trainingMethod");
-            
+
             // Assign arguments to corresponding variables
             this.inputLayer = inputLayer;
             this.outputLayer = inputLayer;
             this.trainingMethod = trainingMethod;
-            
+
             // Initialize jitter parameters with default values
             this.jitterEpoch = 73;
             this.jitterNoiseLimit = 0.03d;

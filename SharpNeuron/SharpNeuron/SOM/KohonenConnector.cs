@@ -1,10 +1,8 @@
-﻿
-
+﻿using SharpNeuron.Initializers;
 using System;
 using System.Runtime.Serialization;
-using NeuronDotNet.Core.Initializers;
 
-namespace NeuronDotNet.Core.SOM
+namespace SharpNeuron.SOM
 {
     /// <summary>
     /// A Kohonen Connector is an <see cref="IConnector"/> consisting of a collection of Kohonen

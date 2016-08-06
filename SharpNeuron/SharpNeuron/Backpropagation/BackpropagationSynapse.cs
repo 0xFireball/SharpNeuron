@@ -1,6 +1,4 @@
-﻿
-
-namespace NeuronDotNet.Core.Backpropagation
+﻿namespace SharpNeuron.Backpropagation
 {
     /// <summary>
     /// Backpropagation synapse connects two activation neurons. A typical backpropagation network
@@ -145,7 +143,7 @@ namespace NeuronDotNet.Core.Backpropagation
         /// </param>
         public void Jitter(double jitterNoiseLimit)
         {
-            weight += Helper.GetRandom(-jitterNoiseLimit, jitterNoiseLimit) ;
+            weight += Helper.GetRandom(-jitterNoiseLimit, jitterNoiseLimit);
         }
     }
 }

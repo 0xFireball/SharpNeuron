@@ -1,10 +1,8 @@
-﻿
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
-namespace NeuronDotNet.Core
+namespace SharpNeuron
 {
     /// <summary>
     /// A Training Set represents a set of training samples used during 'batch training' process.
@@ -28,7 +26,7 @@ namespace NeuronDotNet.Core
         }
 
         /// <summary>
-        /// Gets the length of input vector. 
+        /// Gets the length of input vector.
         /// </summary>
         /// <value>
         /// Input Vector Length. This is always positive and is equal to the number of input neurons
@@ -53,7 +51,7 @@ namespace NeuronDotNet.Core
         }
 
         /// <summary>
-        /// Exposes an Enumerator to iterator over training samples in the set. 
+        /// Exposes an Enumerator to iterator over training samples in the set.
         /// </summary>
         /// <value>
         /// Training Samples Enumerator. No training sample returned is <c>null</c>.

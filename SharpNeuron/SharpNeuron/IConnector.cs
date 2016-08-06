@@ -1,9 +1,7 @@
-﻿
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Runtime.Serialization;
 
-namespace NeuronDotNet.Core
+namespace SharpNeuron
 {
     /// <summary>
     /// This interface represents a connector. A connector is a collection of synapses connecting
@@ -28,7 +26,7 @@ namespace NeuronDotNet.Core
         ILayer TargetLayer { get; }
 
         /// <summary>
-        /// Gets the number of synapses in the connector. 
+        /// Gets the number of synapses in the connector.
         /// </summary>
         /// <value>
         /// Synapse Count. It is always positive.

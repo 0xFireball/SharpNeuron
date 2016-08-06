@@ -1,10 +1,8 @@
-﻿
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
-namespace NeuronDotNet.Core.Backpropagation
+namespace SharpNeuron.Backpropagation
 {
     /// <summary>
     /// A Backpropagation Connector is an <see cref="IConnector"/> which consists of a collection of
@@ -12,7 +10,7 @@ namespace NeuronDotNet.Core.Backpropagation
     /// </summary>
     [Serializable]
     public class BackpropagationConnector
-        : Connector<ActivationLayer, ActivationLayer,BackpropagationSynapse>
+        : Connector<ActivationLayer, ActivationLayer, BackpropagationSynapse>
     {
         internal double momentum = 0.07d;
 
@@ -158,6 +156,11 @@ namespace NeuronDotNet.Core.Backpropagation
                         sourceEnumerator.Current, targetEnumerator.Current, this);
                 }
             }
+        }
+
+        public static BackpropagationConnector Connect(ActivationLayer sourceLayer, ActivationLayer targetLayer)
+        {
+            return new BackpropagationConnector(sourceLayer, targetLayer);
         }
     }
 }

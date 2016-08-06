@@ -1,9 +1,7 @@
-﻿
-
-using System;
+﻿using System;
 using System.Runtime.Serialization;
 
-namespace NeuronDotNet.Core.SOM.NeighborhoodFunctions
+namespace SharpNeuron.SOM.NeighborhoodFunctions
 {
     /// <summary>
     /// Gaussian Neighborhood Function. It is a continuous bell shaped curve centered at winner neuron.
@@ -11,7 +9,7 @@ namespace NeuronDotNet.Core.SOM.NeighborhoodFunctions
     [Serializable]
     public sealed class GaussianFunction : INeighborhoodFunction
     {
-        /* 
+        /*
          *  Gaussian function = a * Exp( - ((x-b)square) / 2 (c square))
          *
          *  The parameter 'a' is the height of the curve's peak, 'b' is the position of the center of
@@ -23,7 +21,7 @@ namespace NeuronDotNet.Core.SOM.NeighborhoodFunctions
          *  c = depends on training progress.
          *
          *  Initial value of c is obtained from the user (as learning radius)
-         *  Note that, (x-b)square denotes the euclidean distance between winner neuron 'b' and neuron 'x' 
+         *  Note that, (x-b)square denotes the euclidean distance between winner neuron 'b' and neuron 'x'
          *
          *                     _._
          *                    /   \
@@ -55,7 +53,7 @@ namespace NeuronDotNet.Core.SOM.NeighborhoodFunctions
         /// </param>
         public GaussianFunction(int learningRadius)
         {
-            // Full Width at Half Maximum for a Gaussian curve 
+            // Full Width at Half Maximum for a Gaussian curve
             //        = sigma * Math.Sqrt(2 * ln(2)) = sigma * 2.35482
 
             // Full Width at Half Maximum (FWHM) is nothing but learning diameter
@@ -141,7 +139,7 @@ namespace NeuronDotNet.Core.SOM.NeighborhoodFunctions
 
             // Optimization measure: Pre-calculated 2-Sigma-Square
             double twoSigmaSquare = 2 * currentSigma * currentSigma;
-            
+
             // Evaluate and update neighborhood value of each neuron
             foreach (PositionNeuron neuron in layer.Neurons)
             {
@@ -156,14 +154,14 @@ namespace NeuronDotNet.Core.SOM.NeighborhoodFunctions
                 {
                     dy = Math.Min(dy, layerHeight - dy);
                 }
-                
+
                 double dxSquare = dx * dx;
                 double dySquare = dy * dy;
                 if (layer.Topology == LatticeTopology.Hexagonal)
                 {
                     if (dy % 2 == 1)
                     {
-                        dxSquare += 0.25 + (((neuron.Coordinate.X > winnerX )== (winnerY % 2 ==0))? dx: -dx);
+                        dxSquare += 0.25 + (((neuron.Coordinate.X > winnerX) == (winnerY % 2 == 0)) ? dx : -dx);
                     }
                     dySquare *= 0.75;
                 }

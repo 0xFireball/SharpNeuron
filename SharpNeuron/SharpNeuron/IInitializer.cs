@@ -1,10 +1,8 @@
-﻿
-
+﻿using SharpNeuron.Backpropagation;
+using SharpNeuron.SOM;
 using System.Runtime.Serialization;
-using NeuronDotNet.Core.Backpropagation;
-using NeuronDotNet.Core.SOM;
 
-namespace NeuronDotNet.Core
+namespace SharpNeuron
 {
     /// <summary>
     /// Initializer interface. An initializer should define initialization methods for all concrete

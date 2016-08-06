@@ -1,9 +1,7 @@
-﻿
-
-using System;
+﻿using System;
 using System.Runtime.Serialization;
 
-namespace NeuronDotNet.Core.LearningRateFunctions
+namespace SharpNeuron.LearningRateFunctions
 {
     /// <summary>
     /// Hyperbolic Learning Rate Function. As training progresses, The learning rate hyperbolically

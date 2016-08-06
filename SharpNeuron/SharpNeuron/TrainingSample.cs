@@ -1,9 +1,7 @@
-﻿
-
-using System;
+﻿using System;
 using System.Runtime.Serialization;
 
-namespace NeuronDotNet.Core
+namespace SharpNeuron
 {
     /// <summary>
     /// This class represents a training sample used to train a neural network
@@ -29,7 +27,7 @@ namespace NeuronDotNet.Core
         }
 
         /// <summary>
-        /// Gets the value of expected output vector 
+        /// Gets the value of expected output vector
         /// </summary>
         /// <value>
         /// Output Vector. It is never <c>null</c>.

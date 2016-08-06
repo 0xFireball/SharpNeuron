@@ -1,9 +1,7 @@
-﻿
-
-using System;
+﻿using System;
 using System.Runtime.Serialization;
 
-namespace NeuronDotNet.Core.Backpropagation
+namespace SharpNeuron.Backpropagation
 {
     /// <summary>
     /// Activation Layer is a layer of activation neurons.
@@ -55,7 +53,7 @@ namespace NeuronDotNet.Core.Backpropagation
         /// <exception cref="ArgumentNullException">
         /// If <c>info</c> is <c>null</c>
         /// </exception>
-        public ActivationLayer(SerializationInfo info, StreamingContext context) 
+        public ActivationLayer(SerializationInfo info, StreamingContext context)
             : base(info, context)
         {
             this.useFixedBiasValues = info.GetBoolean("useFixedBiasValues");

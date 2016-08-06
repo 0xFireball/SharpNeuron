@@ -1,11 +1,9 @@
-﻿
-
+﻿using SharpNeuron.SOM.NeighborhoodFunctions;
 using System;
 using System.Drawing;
 using System.Runtime.Serialization;
-using NeuronDotNet.Core.SOM.NeighborhoodFunctions;
 
-namespace NeuronDotNet.Core.SOM
+namespace SharpNeuron.SOM
 {
     /// <summary>
     /// Kohonen Layer is a layer containing position neurons.
@@ -221,7 +219,7 @@ namespace NeuronDotNet.Core.SOM
 
             Helper.ValidateNotNull(neighborhoodFunction, "neighborhoodFunction");
             Helper.ValidateEnum(typeof(LatticeTopology), topology, "topology");
-            
+
             this.size = size;
             this.neighborhoodFunction = neighborhoodFunction;
             this.topology = topology;
@@ -255,7 +253,7 @@ namespace NeuronDotNet.Core.SOM
             this.size.Width = info.GetInt32("size.Width");
 
             this.topology = (LatticeTopology)info.GetValue("topology", typeof(LatticeTopology));
-            
+
             this.neighborhoodFunction
                 = info.GetValue("neighborhoodFunction", typeof(INeighborhoodFunction))
                 as INeighborhoodFunction;

@@ -1,11 +1,8 @@
-﻿
-
-using System;
+﻿using SharpNeuron.Backpropagation;
+using SharpNeuron.SOM;
 using System.Runtime.Serialization;
-using NeuronDotNet.Core.Backpropagation;
-using NeuronDotNet.Core.SOM;
 
-namespace NeuronDotNet.Core.Initializers
+namespace SharpNeuron.Initializers
 {
     /// <summary>
     /// An <see cref="IInitializer"/> using Normalized Random function.

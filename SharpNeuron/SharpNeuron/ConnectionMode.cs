@@ -1,5 +1,4 @@
-﻿
-namespace NeuronDotNet.Core
+﻿namespace SharpNeuron
 {
     /// <summary>
     /// Mode of connection between layers.

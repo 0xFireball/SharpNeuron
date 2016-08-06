@@ -1,6 +1,4 @@
-﻿
-
-namespace NeuronDotNet.Core.SOM
+﻿namespace SharpNeuron.SOM
 {
     /// <summary>
     /// A Kohonen Synapse is used to connect a neuron to a Position Neuron. It propagates the data

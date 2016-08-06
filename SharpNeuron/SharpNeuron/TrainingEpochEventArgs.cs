@@ -1,8 +1,6 @@
-﻿
+﻿using System;
 
-using System;
-
-namespace NeuronDotNet.Core
+namespace SharpNeuron
 {
     /// <summary>
     /// Training Epoch Event Handler. This delegate handles events invoked whenever a training epoch

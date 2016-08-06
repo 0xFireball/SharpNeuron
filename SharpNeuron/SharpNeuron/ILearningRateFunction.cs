@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization;
 
-namespace NeuronDotNet.Core
+namespace SharpNeuron
 {
     /// <summary>
     /// Learning Rate Function interface. This interface defines the way in which learning rate

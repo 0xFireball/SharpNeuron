@@ -1,8 +1,7 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Runtime.Serialization;
 
-namespace NeuronDotNet.Core
+namespace SharpNeuron
 {
     /// <summary>
     /// <para>
@@ -84,7 +83,7 @@ namespace NeuronDotNet.Core
         int ConnectorCount { get; }
 
         /// <summary>
-        /// Exposes an enumerator to iterate over connectors in the network. 
+        /// Exposes an enumerator to iterate over connectors in the network.
         /// </summary>
         /// <value>
         /// Connector Enumerator. No connector in a network can be <c>null</c>.
@@ -224,7 +223,7 @@ namespace NeuronDotNet.Core
         /// <exception cref="System.ArgumentOutOfRangeException">
         /// If <c>currentIteration</c> is negative or, if it is not less than <c>trainingEpochs</c>
         /// </exception>
-        void Learn(TrainingSample trainingSample, int currentIteration , int trainingEpochs);
+        void Learn(TrainingSample trainingSample, int currentIteration, int trainingEpochs);
 
         /// <summary>
         /// If the network is currently learning, this method stops the learning.

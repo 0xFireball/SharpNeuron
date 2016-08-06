@@ -1,10 +1,9 @@
-﻿
+﻿using SharpNeuron.Backpropagation;
+using SharpNeuron.SOM;
 using System;
 using System.Runtime.Serialization;
-using NeuronDotNet.Core.Backpropagation;
-using NeuronDotNet.Core.SOM;
 
-namespace NeuronDotNet.Core.Initializers
+namespace SharpNeuron.Initializers
 {
     /// <summary>
     /// An <see cref="IInitializer"/> using Nguyen Widrow function.
@@ -96,7 +95,7 @@ namespace NeuronDotNet.Core.Initializers
             int hiddenNeuronCount = 0;
             foreach (IConnector targetConnector in activationLayer.TargetConnectors)
             {
-                    hiddenNeuronCount += targetConnector.TargetLayer.NeuronCount;
+                hiddenNeuronCount += targetConnector.TargetLayer.NeuronCount;
             }
 
             double nGuyenWidrowFactor = NGuyenWidrowFactor(activationLayer.NeuronCount, hiddenNeuronCount);
@@ -119,7 +118,7 @@ namespace NeuronDotNet.Core.Initializers
         public void Initialize(BackpropagationConnector connector)
         {
             Helper.ValidateNotNull(connector, "connector");
-            
+
             double nGuyenWidrowFactor = NGuyenWidrowFactor(
                 connector.SourceLayer.NeuronCount, connector.TargetLayer.NeuronCount);
 
