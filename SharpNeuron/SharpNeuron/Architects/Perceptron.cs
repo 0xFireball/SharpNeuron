@@ -18,16 +18,21 @@ namespace SharpNeuron.Architects
             ActivationLayer previousLayer = inputLayer;
             foreach (var hiddenLayerCount in hiddenLayerCounts)
             {
-                var hiddenLayer = new SigmoidLayer(hiddenLayerCount);
-                hiddenLayers.Add(hiddenLayer);
-                BackpropagationConnector.Connect(previousLayer, hiddenLayer);
-                previousLayer = hiddenLayer;
+                var newHiddenLayer = new SigmoidLayer(hiddenLayerCount);
+                hiddenLayers.Add(newHiddenLayer);
+                BackpropagationConnector.Connect(previousLayer, newHiddenLayer);
+                previousLayer = newHiddenLayer;
             }
             BackpropagationConnector.Connect(previousLayer, outputLayer);
             var network = new BackpropagationNetwork(inputLayer, outputLayer);
             Network = network;
         }
 
-        public Network Network { get; }
+        public double[] Run(params double[] inputData)
+        {
+            return Network.Run(inputData);
+        }
+
+        public BackpropagationNetwork Network { get; }
     }
 }

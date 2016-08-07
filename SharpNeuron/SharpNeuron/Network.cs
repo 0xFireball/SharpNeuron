@@ -529,8 +529,8 @@ namespace SharpNeuron
         public virtual void Learn(TrainingSet trainingSet, int trainingEpochs)
         {
             // Validate
-            Helper.ValidateNotNull(trainingSet, "trainingSet");
-            Helper.ValidatePositive(trainingEpochs, "trainingEpochs");
+            Helper.ValidateNotNull(trainingSet, nameof(TrainingSet));
+            Helper.ValidatePositive(trainingEpochs, nameof(trainingEpochs));
             if ((trainingSet.InputVectorLength != inputLayer.NeuronCount)
                 || (trainingMethod == TrainingMethod.Supervised && trainingSet.OutputVectorLength != outputLayer.NeuronCount)
                 || (trainingMethod == TrainingMethod.Unsupervised && trainingSet.OutputVectorLength != 0))
