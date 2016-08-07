@@ -45,9 +45,6 @@
     <AssemblyOriginatorKeyFile>SharpNeuronKey.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Architects\Perceptron.cs" />
     <Compile Include="Architects\Teacher.cs" />
     <Compile Include="Architects\TeachingParameters.cs" />
