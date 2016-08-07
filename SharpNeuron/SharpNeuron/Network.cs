@@ -475,7 +475,7 @@ namespace SharpNeuron
         /// <summary>
         /// Initializes all layers and connectors and makes them ready to undergo fresh training.
         /// </summary>
-        public virtual void Initialize()
+        public void Initialize()
         {
             for (int i = 0; i < layers.Count; i++)
             {
@@ -542,7 +542,8 @@ namespace SharpNeuron
             isStopping = false;
 
             // Re-Initialize the network
-            Initialize();
+            //Don't reinitialize, leave that up to the caller. They can call Initialize themselves.
+            //Initialize();
             for (int currentIteration = 0; currentIteration < trainingEpochs; currentIteration++)
             {
                 int[] randomOrder = Helper.GetRandomOrder(trainingSet.TrainingSampleCount);
