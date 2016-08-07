@@ -12,6 +12,8 @@ One of the major goals of this project is to provide high-level APIs for special
 
 Simply clone the source and add the `SharpNeuron` project to your solution. This will allow you to customize it in case you would like to, and allows you to avoid using any precompiled libraries.
 
+SharpNeuron has no platform-specific limitations, and should work on any .NET platform.
+
 ## License
 
 SharpNeuron is licensed under the GNU GPLv3.
