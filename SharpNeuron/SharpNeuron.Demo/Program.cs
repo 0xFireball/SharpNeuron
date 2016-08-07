@@ -22,7 +22,8 @@ namespace SharpNeuron.Demo
             xorTrainingSet.Add(new TrainingSample(new double[2] { 1d, 0d }, new double[1] { 1d }));
             xorTrainingSet.Add(new TrainingSample(new double[2] { 1d, 1d }, new double[1] { 0d }));
 
-            teacher.Train(xorTrainingSet, new TeachingParameters { });
+            //Do 20K iterations unconditionalls
+            teacher.Train(xorTrainingSet, new TeachingParameters { Iterations = 20000, ErrorThreshold = 0 });
 
             //Test network
             var outputSignal = perceptron.Run(new[] { 0d, 1d })[0];
