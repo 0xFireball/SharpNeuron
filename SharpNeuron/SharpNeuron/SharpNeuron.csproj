@@ -52,7 +52,6 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
-    <Reference Include="System.Drawing" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Architects\Perceptron.cs" />
@@ -124,6 +123,8 @@
     <Compile Include="TrainingMethod.cs" />
     <Compile Include="TrainingSample.cs" />
     <Compile Include="TrainingSet.cs" />
+    <Compile Include="Types\Point.cs" />
+    <Compile Include="Types\Size.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="SharpNeuronKey.snk" />
