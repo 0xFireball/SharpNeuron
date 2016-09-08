@@ -46,7 +46,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Architects\Perceptron.cs" />
-    <Compile Include="Architects\Teacher.cs" />
+    <Compile Include="Architects\PerceptronTeacher.cs" />
     <Compile Include="Architects\TeachingParameters.cs" />
     <Compile Include="Backpropagation\ActivationLayer.cs" />
     <Compile Include="Backpropagation\ActivationNeuron.cs" />

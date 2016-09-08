@@ -1,8 +1,8 @@
 ﻿namespace SharpNeuron.Architects
 {
-    public class Teacher
+    public class PerceptronTeacher
     {
-        public Teacher(Perceptron studentNetwork)
+        public PerceptronTeacher(Perceptron studentNetwork)
         {
             Student = studentNetwork;
         }
