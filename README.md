@@ -2,6 +2,7 @@
 # SharpNeruon
 
 SharpNeuron is a .NET Neural Network library based on [NeronDotNet](https://sourceforge.net/projects/neurondotnet/), which seems to have been abandoned.
+The vast majority of the code comes directly from NeuronDotNet.
 
 ## About this project
 
