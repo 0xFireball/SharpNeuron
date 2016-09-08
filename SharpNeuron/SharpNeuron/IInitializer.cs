@@ -33,6 +33,17 @@ namespace SharpNeuron
         void Initialize(BackpropagationConnector connector);
 
         /// <summary>
+        /// ITODO: Write summary
+        /// </summary>
+        /// <param name="gate">
+        /// The backpropagation connector to initialize.
+        /// </param>
+        /// <exception cref="System.ArgumentNullException">
+        /// If <c>connector</c> is <c>null</c>
+        /// </exception>
+        void Initialize(BackpropagationGate gate);
+
+        /// <summary>
         /// Initializes weights of all spatial synapses in a Kohonen connector.
         /// </summary>
         /// <param name="connector">

@@ -161,8 +161,8 @@ namespace SharpNeuron
         protected Connector(TSourceLayer sourceLayer, TTargetLayer targetLayer, ConnectionMode connectionMode)
         {
             // Validate
-            Helper.ValidateNotNull(sourceLayer, "sourceLayer");
-            Helper.ValidateNotNull(targetLayer, "targetLayer");
+            Helper.ValidateNotNull(sourceLayer, nameof(sourceLayer));
+            Helper.ValidateNotNull(targetLayer, nameof(targetLayer));
 
             targetLayer.SourceConnectors.Add(this);
             sourceLayer.TargetConnectors.Add(this);
@@ -176,6 +176,7 @@ namespace SharpNeuron
             switch (connectionMode)
             {
                 case ConnectionMode.AllToAll:
+                case ConnectionMode.AllToElse:
                     synapses = new TSynapse[sourceLayer.NeuronCount * targetLayer.NeuronCount];
                     break;
 
@@ -186,9 +187,9 @@ namespace SharpNeuron
                         break;
                     }
                     throw new ArgumentException(
-                        "One-One connector cannot be formed between these layers", "connectionMode");
+                        "One-One connector cannot be formed between these layers", nameof(connectionMode));
                 default:
-                    throw new ArgumentException("Invalid Connection Mode", "connectionMode");
+                    throw new ArgumentException("Invalid Connection Mode", nameof(connectionMode));
             }
         }
 

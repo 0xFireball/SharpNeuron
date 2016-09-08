@@ -53,6 +53,7 @@
     <Compile Include="Backpropagation\ActivationLayer.cs" />
     <Compile Include="Backpropagation\ActivationNeuron.cs" />
     <Compile Include="Backpropagation\BackpropagationConnector.cs" />
+    <Compile Include="Backpropagation\BackpropagationGate.cs" />
     <Compile Include="Backpropagation\BackpropagationNetwork.cs" />
     <Compile Include="Backpropagation\BackpropagationSynapse.cs" />
     <Compile Include="Backpropagation\LinearLayer.cs" />

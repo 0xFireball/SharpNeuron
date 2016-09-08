@@ -110,7 +110,7 @@
         /// </summary>
         public void Propagate()
         {
-            targetNeuron.input += sourceNeuron.output * weight;
+            targetNeuron.Input += sourceNeuron.Output * weight;
         }
 
         /// <summary>
@@ -121,7 +121,7 @@
         /// </param>
         public void OptimizeWeight(double learningFactor)
         {
-            delta = delta * parent.momentum + learningFactor * targetNeuron.error * sourceNeuron.output;
+            delta = delta * parent.momentum + learningFactor * targetNeuron.Error * sourceNeuron.Output;
             weight += delta;
         }
 
@@ -130,7 +130,7 @@
         /// </summary>
         public void Backpropagate()
         {
-            sourceNeuron.error += targetNeuron.error * weight;
+            sourceNeuron.Error += targetNeuron.Error * weight;
         }
 
         /// <summary>
