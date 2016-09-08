@@ -23,6 +23,7 @@ namespace SharpNeuron.Backpropagation
                             var gated = neuron.SourceSynapses[j];
                             if (connection.Synapses.Contains(gated))
                             {
+                                //NOTE: Gate not yet finished!
                                 gater.Gate(gated);
                             }
                         }
