@@ -5,7 +5,7 @@ namespace SharpNeuron.Demo
 {
     internal class Program
     {
-        private static void Main(string[] args)
+        private static void Main()
         {
             //Run a XOR test
             Console.Write("Running XOR test...");
@@ -28,8 +28,6 @@ namespace SharpNeuron.Demo
             //Test network
             var outputSignal = perceptron.Run(new[] { 0d, 1d })[0];
             Console.WriteLine(outputSignal);
-
-
         }
     }
 }

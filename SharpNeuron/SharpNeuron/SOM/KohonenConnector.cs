@@ -24,7 +24,7 @@ namespace SharpNeuron.SOM
         /// If <c>sourceLayer</c> or <c>targetLayer</c> is <c>null</c>
         /// </exception>
         public KohonenConnector(ILayer sourceLayer, KohonenLayer targetLayer)
-            : base(sourceLayer, targetLayer, ConnectionMode.Complete)
+            : base(sourceLayer, targetLayer, ConnectionMode.AllToAll)
         {
             initializer = new RandomFunction();
 

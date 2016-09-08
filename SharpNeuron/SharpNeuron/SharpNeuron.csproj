@@ -46,6 +46,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Architects\LSTM.cs" />
+    <Compile Include="Architects\LSTMOptions.cs" />
     <Compile Include="Architects\Perceptron.cs" />
     <Compile Include="Architects\PerceptronTeacher.cs" />
     <Compile Include="Architects\TeachingParameters.cs" />

@@ -39,7 +39,7 @@ namespace SharpNeuron.Backpropagation
         /// If <c>sourceLayer</c> or <c>targetLayer</c> is <c>null</c>
         /// </exception>
         public BackpropagationConnector(ActivationLayer sourceLayer, ActivationLayer targetLayer)
-            : this(sourceLayer, targetLayer, ConnectionMode.Complete)
+            : this(sourceLayer, targetLayer, ConnectionMode.AllToAll)
         {
         }
 
@@ -136,7 +136,7 @@ namespace SharpNeuron.Backpropagation
         private void ConstructSynapses()
         {
             int i = 0;
-            if (connectionMode == ConnectionMode.Complete)
+            if (connectionMode == ConnectionMode.AllToAll)
             {
                 foreach (ActivationNeuron targetNeuron in targetLayer.Neurons)
                 {
@@ -146,7 +146,7 @@ namespace SharpNeuron.Backpropagation
                     }
                 }
             }
-            else
+            else if (connectionMode == ConnectionMode.OneToOne)
             {
                 IEnumerator<ActivationNeuron> sourceEnumerator = sourceLayer.Neurons.GetEnumerator();
                 IEnumerator<ActivationNeuron> targetEnumerator = targetLayer.Neurons.GetEnumerator();
@@ -154,6 +154,21 @@ namespace SharpNeuron.Backpropagation
                 {
                     synapses[i++] = new BackpropagationSynapse(
                         sourceEnumerator.Current, targetEnumerator.Current, this);
+                }
+            }
+
+            else if (connectionMode == ConnectionMode.AllToElse)
+            {
+                foreach (ActivationNeuron targetNeuron in targetLayer.Neurons)
+                {
+                    foreach (ActivationNeuron sourceNeuron in sourceLayer.Neurons)
+                    {
+                        if (sourceNeuron == targetNeuron)
+                        {
+                            continue; //Skip connecting to self
+                        }
+                        synapses[i++] = new BackpropagationSynapse(sourceNeuron, targetNeuron, this);
+                    }
                 }
             }
         }

@@ -175,11 +175,11 @@ namespace SharpNeuron
             // Since synapses array is readonly, it should be initialized here
             switch (connectionMode)
             {
-                case ConnectionMode.Complete:
+                case ConnectionMode.AllToAll:
                     synapses = new TSynapse[sourceLayer.NeuronCount * targetLayer.NeuronCount];
                     break;
 
-                case ConnectionMode.OneOne:
+                case ConnectionMode.OneToOne:
                     if (sourceLayer.NeuronCount == targetLayer.NeuronCount)
                     {
                         synapses = new TSynapse[sourceLayer.NeuronCount];
@@ -217,7 +217,7 @@ namespace SharpNeuron
             targetLayer.SourceConnectors.Add(this);
             sourceLayer.TargetConnectors.Add(this);
 
-            if (connectionMode == ConnectionMode.Complete)
+            if (connectionMode == ConnectionMode.AllToAll)
             {
                 synapses = new TSynapse[sourceLayer.NeuronCount * targetLayer.NeuronCount];
             }

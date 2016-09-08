@@ -16,6 +16,7 @@ namespace SharpNeuron.Architects
             SigmoidLayer outputLayer = new SigmoidLayer(outputCount);
             List<SigmoidLayer> hiddenLayers = new List<SigmoidLayer>();
             ActivationLayer previousLayer = inputLayer;
+
             foreach (var hiddenLayerNeuronCount in hiddenLayerSizes)
             {
                 var newHiddenLayer = new SigmoidLayer(hiddenLayerNeuronCount);
