@@ -53,9 +53,10 @@
     <Compile Include="Backpropagation\ActivationLayer.cs" />
     <Compile Include="Backpropagation\ActivationNeuron.cs" />
     <Compile Include="Backpropagation\BackpropagationConnector.cs" />
-    <Compile Include="Backpropagation\BackpropagationGate.cs" />
     <Compile Include="Backpropagation\BackpropagationNetwork.cs" />
     <Compile Include="Backpropagation\BackpropagationSynapse.cs" />
+    <Compile Include="Backpropagation\ConnectionGate.cs" />
+    <Compile Include="Backpropagation\ConnectionGateType.cs" />
     <Compile Include="Backpropagation\LinearLayer.cs" />
     <Compile Include="Backpropagation\LogarithmLayer.cs" />
     <Compile Include="Backpropagation\SigmoidLayer.cs" />
@@ -73,6 +74,7 @@
     <Compile Include="LearningRateFunctions\AbstractFunction.cs" />
     <Compile Include="LearningRateFunctions\HyperbolicFunction.cs" />
     <Compile Include="LearningRateFunctions\LinearFunction.cs" />
+    <Compile Include="RandomProvider.cs" />
     <Compile Include="SOM\LatticeTopology.cs" />
     <Compile Include="SOM\NeighborhoodFunctions\MexicanHatFunction.cs" />
     <Compile Include="TrainingSampleEventArgs.cs" />

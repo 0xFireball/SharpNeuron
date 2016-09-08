@@ -14,6 +14,7 @@ namespace SharpNeuron.Backpropagation
 
         private readonly IList<ISynapse> sourceSynapses = new List<ISynapse>();
         private readonly IList<ISynapse> targetSynapses = new List<ISynapse>();
+        private readonly IList<ISynapse> gateSynapses = new List<ISynapse>();
 
         private ActivationLayer parent;
 
@@ -89,6 +90,17 @@ namespace SharpNeuron.Backpropagation
         }
 
         /// <summary>
+        /// Gets the list of gate synapses associated with this neuron
+        /// </summary>
+        /// <value>
+        /// A list of gate synapses. It can neither be <c>null</c>, nor contains <c>null</c> elements.
+        /// </value>
+        public IList<ISynapse> GateSynapses
+        {
+            get { return gateSynapses; }
+        }
+
+        /// <summary>
         /// Gets the parent layer containing this neuron
         /// </summary>
         /// <value>
@@ -113,7 +125,7 @@ namespace SharpNeuron.Backpropagation
         /// <exception cref="System.ArgumentNullException">
         /// If <c>parent</c> is <c>null</c>
         /// </exception>
-        public ActivationNeuron(ActivationLayer parent)
+        public ActivationNeuron(ActivationLayer parent, bool useRandomBias = false)
         {
             Helper.ValidateNotNull(parent, "parent");
 
@@ -121,6 +133,10 @@ namespace SharpNeuron.Backpropagation
             output = 0d;
             error = 0d;
             bias = 0d;
+            if (useRandomBias)
+            {
+                bias = RandomProvider.RNG.NextDouble() * 0.2 - 0.1;
+            }
             this.parent = parent;
         }
 
@@ -173,6 +189,17 @@ namespace SharpNeuron.Backpropagation
             {
                 sourceSynapses[i].OptimizeWeight(learningRate);
             }
+        }
+
+        public void Gate(ISynapse connection)
+        {
+            //Add connection to gated list
+            gateSynapses.Add(connection);
+
+            var neuron = connection.TargetNeuron;
+            
+            //keep track
+            //TODO: implement trace
         }
     }
 }
