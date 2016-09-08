@@ -170,7 +170,7 @@ namespace SharpNeuron
             this.sourceLayer = sourceLayer;
             this.targetLayer = targetLayer;
             this.connectionMode = connectionMode;
-            this.initializer = new NguyenWidrowFunction();
+            initializer = new NguyenWidrowFunction();
 
             // Since synapses array is readonly, it should be initialized here
             switch (connectionMode)
@@ -208,11 +208,11 @@ namespace SharpNeuron
         {
             Helper.ValidateNotNull(info, "info");
 
-            this.sourceLayer = (TSourceLayer)info.GetValue("sourceLayer", typeof(TSourceLayer));
-            this.targetLayer = (TTargetLayer)info.GetValue("targetLayer", typeof(TTargetLayer));
-            this.initializer = (IInitializer)info.GetValue("initializer", typeof(IInitializer));
+            sourceLayer = (TSourceLayer)info.GetValue("sourceLayer", typeof(TSourceLayer));
+            targetLayer = (TTargetLayer)info.GetValue("targetLayer", typeof(TTargetLayer));
+            initializer = (IInitializer)info.GetValue("initializer", typeof(IInitializer));
 
-            this.connectionMode = (ConnectionMode)info.GetValue("connectionMode", typeof(ConnectionMode));
+            connectionMode = (ConnectionMode)info.GetValue("connectionMode", typeof(ConnectionMode));
 
             targetLayer.SourceConnectors.Add(this);
             sourceLayer.TargetConnectors.Add(this);

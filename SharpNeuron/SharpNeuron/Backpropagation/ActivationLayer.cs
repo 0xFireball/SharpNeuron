@@ -56,9 +56,9 @@ namespace SharpNeuron.Backpropagation
         public ActivationLayer(SerializationInfo info, StreamingContext context)
             : base(info, context)
         {
-            this.useFixedBiasValues = info.GetBoolean("useFixedBiasValues");
+            useFixedBiasValues = info.GetBoolean(nameof(useFixedBiasValues));
 
-            double[] biasValues = (double[])info.GetValue("biasValues", typeof(double[]));
+            double[] biasValues = (double[])info.GetValue(nameof(biasValues), typeof(double[]));
             for (int i = 0; i < biasValues.Length; i++)
             {
                 neurons[i] = new ActivationNeuron(this);
@@ -90,7 +90,7 @@ namespace SharpNeuron.Backpropagation
                 biasValues[i] = neurons[i].bias;
             }
 
-            info.AddValue("biasValues", biasValues, typeof(double[]));
+            info.AddValue(nameof(biasValues), biasValues, typeof(double[]));
         }
 
         /// <summary>

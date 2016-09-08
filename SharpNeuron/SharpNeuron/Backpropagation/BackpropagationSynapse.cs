@@ -94,8 +94,8 @@
             Helper.ValidateNotNull(targetNeuron, "targetNeuron");
             Helper.ValidateNotNull(parent, "parent");
 
-            this.weight = 1f;
-            this.delta = 0f;
+            weight = 1f;
+            delta = 0f;
 
             sourceNeuron.TargetSynapses.Add(this);
             targetNeuron.SourceSynapses.Add(this);
@@ -110,7 +110,7 @@
         /// </summary>
         public void Propagate()
         {
-            targetNeuron.input += sourceNeuron.output * this.weight;
+            targetNeuron.input += sourceNeuron.output * weight;
         }
 
         /// <summary>
@@ -130,7 +130,7 @@
         /// </summary>
         public void Backpropagate()
         {
-            sourceNeuron.error += targetNeuron.error * this.weight;
+            sourceNeuron.error += targetNeuron.error * weight;
         }
 
         /// <summary>

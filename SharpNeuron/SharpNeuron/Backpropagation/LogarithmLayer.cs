@@ -22,7 +22,7 @@ namespace SharpNeuron.Backpropagation
         public LogarithmLayer(int neuronCount)
             : base(neuronCount)
         {
-            this.initializer = new NguyenWidrowFunction();
+            initializer = new NguyenWidrowFunction();
         }
 
         /// <summary>

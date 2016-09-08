@@ -249,17 +249,17 @@ namespace SharpNeuron.SOM
         public KohonenLayer(SerializationInfo info, StreamingContext context)
             : base(info, context)
         {
-            this.size.Height = info.GetInt32("size.Height");
-            this.size.Width = info.GetInt32("size.Width");
+            size.Height = info.GetInt32("size.Height");
+            size.Width = info.GetInt32("size.Width");
 
-            this.topology = (LatticeTopology)info.GetValue("topology", typeof(LatticeTopology));
+            topology = (LatticeTopology)info.GetValue("topology", typeof(LatticeTopology));
 
-            this.neighborhoodFunction
+            neighborhoodFunction
                 = info.GetValue("neighborhoodFunction", typeof(INeighborhoodFunction))
                 as INeighborhoodFunction;
 
-            this.isRowCircular = info.GetBoolean("isRowCircular");
-            this.isColumnCircular = info.GetBoolean("isColumnCircular");
+            isRowCircular = info.GetBoolean("isRowCircular");
+            isColumnCircular = info.GetBoolean("isColumnCircular");
         }
 
         /// <summary>
@@ -299,7 +299,7 @@ namespace SharpNeuron.SOM
         /// </summary>
         public override void Run()
         {
-            this.winner = neurons[0];
+            winner = neurons[0];
             for (int i = 0; i < neurons.Length; i++)
             {
                 neurons[i].Run();

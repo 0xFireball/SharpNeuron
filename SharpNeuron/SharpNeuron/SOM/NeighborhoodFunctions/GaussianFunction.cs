@@ -59,7 +59,7 @@ namespace SharpNeuron.SOM.NeighborhoodFunctions
             // Full Width at Half Maximum (FWHM) is nothing but learning diameter
             // so, learning radius = 1.17741 * sigma
 
-            this.sigma = learningRadius / 1.17741d;
+            sigma = learningRadius / 1.17741d;
         }
 
         /// <summary>
@@ -77,7 +77,7 @@ namespace SharpNeuron.SOM.NeighborhoodFunctions
         public GaussianFunction(SerializationInfo info, StreamingContext context)
         {
             Helper.ValidateNotNull(info, "info");
-            this.sigma = info.GetDouble("sigma");
+            sigma = info.GetDouble("sigma");
         }
 
         /// <summary>

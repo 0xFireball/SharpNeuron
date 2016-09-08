@@ -137,7 +137,7 @@ namespace SharpNeuron.SOM
 
             this.coordinate = coordinate;
             this.parent = parent;
-            this.value = 0d;
+            value = 0d;
         }
 
         /// <summary>

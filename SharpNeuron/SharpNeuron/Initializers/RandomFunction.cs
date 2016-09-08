@@ -76,8 +76,8 @@ namespace SharpNeuron.Initializers
         {
             Helper.ValidateNotNull(info, "info");
 
-            this.minLimit = info.GetDouble("minLimit");
-            this.maxLimit = info.GetDouble("maxLimit");
+            minLimit = info.GetDouble("minLimit");
+            maxLimit = info.GetDouble("maxLimit");
         }
 
         /// <summary>

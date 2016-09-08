@@ -72,8 +72,8 @@ namespace SharpNeuron.LearningRateFunctions
         {
             Helper.ValidateNotNull(info, "info");
 
-            this.initialLearningRate = info.GetDouble("initialLearningRate");
-            this.finalLearningRate = info.GetDouble("finalLearningRate");
+            initialLearningRate = info.GetDouble("initialLearningRate");
+            finalLearningRate = info.GetDouble("finalLearningRate");
         }
 
         /// <summary>

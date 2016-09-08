@@ -21,7 +21,7 @@ namespace SharpNeuron.Backpropagation
         public LinearLayer(int neuronCount)
             : base(neuronCount)
         {
-            this.useFixedBiasValues = true;
+            useFixedBiasValues = true;
         }
 
         /// <summary>

@@ -82,7 +82,7 @@ namespace SharpNeuron.Backpropagation
         {
             ConstructSynapses();
 
-            this.momentum = info.GetDouble("momentum");
+            momentum = info.GetDouble("momentum");
             double[] weights = (double[])info.GetValue("weights", typeof(double[]));
 
             for (int i = 0; i < synapses.Length; i++)

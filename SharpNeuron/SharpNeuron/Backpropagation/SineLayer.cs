@@ -22,7 +22,7 @@ namespace SharpNeuron.Backpropagation
         public SineLayer(int neuronCount)
             : base(neuronCount)
         {
-            this.initializer = new NguyenWidrowFunction();
+            initializer = new NguyenWidrowFunction();
         }
 
         /// <summary>

@@ -88,7 +88,7 @@
             Helper.ValidateNotNull(targetNeuron, "targetNeuron");
             Helper.ValidateNotNull(parent, "parent");
 
-            this.weight = 1d;
+            weight = 1d;
 
             sourceNeuron.TargetSynapses.Add(this);
             targetNeuron.SourceSynapses.Add(this);
@@ -129,7 +129,7 @@
         /// </param>
         public void Jitter(double jitterNoiseLimit)
         {
-            this.weight += Helper.GetRandom(-jitterNoiseLimit, jitterNoiseLimit);
+            weight += Helper.GetRandom(-jitterNoiseLimit, jitterNoiseLimit);
         }
     }
 }

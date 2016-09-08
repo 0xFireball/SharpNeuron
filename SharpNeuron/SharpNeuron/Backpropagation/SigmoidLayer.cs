@@ -22,8 +22,10 @@ namespace SharpNeuron.Backpropagation
         public SigmoidLayer(int neuronCount)
             : base(neuronCount)
         {
-            this.initializer = new NguyenWidrowFunction();
+            initializer = new NguyenWidrowFunction();
         }
+
+        
 
         /// <summary>
         /// Sigmoid activation function

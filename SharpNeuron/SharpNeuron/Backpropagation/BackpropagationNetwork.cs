@@ -41,8 +41,8 @@ namespace SharpNeuron.Backpropagation
         public BackpropagationNetwork(ActivationLayer inputLayer, ActivationLayer outputLayer)
             : base(inputLayer, outputLayer, TrainingMethod.Supervised)
         {
-            this.meanSquaredError = 0d;
-            this.isValidMSE = false;
+            meanSquaredError = 0d;
+            isValidMSE = false;
         }
 
         /// <summary>

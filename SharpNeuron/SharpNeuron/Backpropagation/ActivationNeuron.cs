@@ -114,10 +114,10 @@ namespace SharpNeuron.Backpropagation
         {
             Helper.ValidateNotNull(parent, "parent");
 
-            this.input = 0d;
-            this.output = 0d;
-            this.error = 0d;
-            this.bias = 0d;
+            input = 0d;
+            output = 0d;
+            error = 0d;
+            bias = 0d;
             this.parent = parent;
         }
 

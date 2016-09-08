@@ -98,8 +98,8 @@ namespace SharpNeuron
 
             // Some neural networks require inputs in normalized form.
             // As an optimization measure, we normalize and store training samples
-            this.normalizedInputVector = Helper.Normalize(inputVector);
-            this.normalizedOutputVector = Helper.Normalize(outputVector);
+            normalizedInputVector = Helper.Normalize(inputVector);
+            normalizedOutputVector = Helper.Normalize(outputVector);
 
             // Calculate the hash code
             hashCode = 0;
@@ -125,10 +125,10 @@ namespace SharpNeuron
         {
             Helper.ValidateNotNull(info, "info");
 
-            this.inputVector = (double[])info.GetValue("inputVector", typeof(double[]));
-            this.outputVector = (double[])info.GetValue("outputVector", typeof(double[]));
-            this.normalizedInputVector = Helper.Normalize(inputVector);
-            this.normalizedOutputVector = Helper.Normalize(outputVector);
+            inputVector = (double[])info.GetValue("inputVector", typeof(double[]));
+            outputVector = (double[])info.GetValue("outputVector", typeof(double[]));
+            normalizedInputVector = Helper.Normalize(inputVector);
+            normalizedOutputVector = Helper.Normalize(outputVector);
 
             hashCode = 0;
             for (int i = 0; i < inputVector.Length; i++)

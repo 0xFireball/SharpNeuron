@@ -172,8 +172,8 @@ namespace SharpNeuron
         {
             Helper.ValidatePositive(neuronCount, "neuronCount");
 
-            this.neurons = new TNeuron[neuronCount];
-            this.learningRateFunction = new LinearFunction(0.3d, 0.05d);
+            neurons = new TNeuron[neuronCount];
+            learningRateFunction = new LinearFunction(0.3d, 0.05d);
         }
 
         /// <summary>
@@ -195,10 +195,10 @@ namespace SharpNeuron
 
             // Deserialize
             int neuronCount = info.GetInt32("neuronCount");
-            this.neurons = new TNeuron[neuronCount];
+            neurons = new TNeuron[neuronCount];
 
-            this.initializer = info.GetValue("initializer", typeof(IInitializer)) as IInitializer;
-            this.learningRateFunction = info.GetValue("learningRateFunction", typeof(ILearningRateFunction)) as ILearningRateFunction;
+            initializer = info.GetValue("initializer", typeof(IInitializer)) as IInitializer;
+            learningRateFunction = info.GetValue("learningRateFunction", typeof(ILearningRateFunction)) as ILearningRateFunction;
         }
 
         /// <summary>

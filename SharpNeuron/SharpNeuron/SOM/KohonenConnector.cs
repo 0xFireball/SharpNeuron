@@ -26,7 +26,7 @@ namespace SharpNeuron.SOM
         public KohonenConnector(ILayer sourceLayer, KohonenLayer targetLayer)
             : base(sourceLayer, targetLayer, ConnectionMode.Complete)
         {
-            this.initializer = new RandomFunction();
+            initializer = new RandomFunction();
 
             int i = 0;
             foreach (PositionNeuron targetNeuron in targetLayer.Neurons)

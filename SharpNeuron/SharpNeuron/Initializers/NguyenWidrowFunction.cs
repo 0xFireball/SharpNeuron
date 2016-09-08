@@ -58,7 +58,7 @@ namespace SharpNeuron.Initializers
         public NguyenWidrowFunction(SerializationInfo info, StreamingContext context)
         {
             Helper.ValidateNotNull(info, "info");
-            this.outputRange = info.GetDouble("outputRange");
+            outputRange = info.GetDouble("outputRange");
         }
 
         /// <summary>

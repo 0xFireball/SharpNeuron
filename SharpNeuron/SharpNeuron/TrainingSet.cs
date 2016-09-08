@@ -120,7 +120,7 @@ namespace SharpNeuron
             // Initialize instance variables
             this.inputVectorLength = inputVectorLength;
             this.outputVectorLength = outputVectorLength;
-            this.trainingSamples = new List<TrainingSample>();
+            trainingSamples = new List<TrainingSample>();
         }
 
         /// <summary>
@@ -139,9 +139,9 @@ namespace SharpNeuron
         {
             Helper.ValidateNotNull(info, "info");
 
-            this.inputVectorLength = info.GetInt32("inputVectorLength");
-            this.outputVectorLength = info.GetInt32("outputVectorLength");
-            this.trainingSamples = info.GetValue("trainingSamples", typeof(IList<TrainingSample>)) as IList<TrainingSample>;
+            inputVectorLength = info.GetInt32("inputVectorLength");
+            outputVectorLength = info.GetInt32("outputVectorLength");
+            trainingSamples = info.GetValue("trainingSamples", typeof(IList<TrainingSample>)) as IList<TrainingSample>;
         }
 
         /// <summary>

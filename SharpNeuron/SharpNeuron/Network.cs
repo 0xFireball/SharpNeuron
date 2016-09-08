@@ -247,12 +247,12 @@ namespace SharpNeuron
             this.trainingMethod = trainingMethod;
 
             // Initialize jitter parameters with default values
-            this.jitterEpoch = 73;
-            this.jitterNoiseLimit = 0.03d;
+            jitterEpoch = 73;
+            jitterNoiseLimit = 0.03d;
 
             // Create the list of layers and connectors
-            this.layers = new List<ILayer>();
-            this.connectors = new List<IConnector>();
+            layers = new List<ILayer>();
+            connectors = new List<IConnector>();
 
             // Populate the lists by visiting layers topologically starting from input layer
             Stack<ILayer> stack = new Stack<ILayer>();
@@ -316,13 +316,13 @@ namespace SharpNeuron
             // Validate
             Helper.ValidateNotNull(info, "info");
 
-            this.inputLayer = info.GetValue("inputLayer", typeof(ILayer)) as ILayer;
-            this.outputLayer = info.GetValue("outputLayer", typeof(ILayer)) as ILayer;
-            this.layers = info.GetValue("layers", typeof(IList<ILayer>)) as IList<ILayer>;
-            this.connectors = info.GetValue("connectors", typeof(IList<IConnector>)) as IList<IConnector>;
-            this.trainingMethod = (TrainingMethod)info.GetValue("trainingMethod", typeof(TrainingMethod));
-            this.jitterEpoch = info.GetInt32("jitterEpoch");
-            this.jitterNoiseLimit = info.GetDouble("jitterNoiseLimit");
+            inputLayer = info.GetValue("inputLayer", typeof(ILayer)) as ILayer;
+            outputLayer = info.GetValue("outputLayer", typeof(ILayer)) as ILayer;
+            layers = info.GetValue("layers", typeof(IList<ILayer>)) as IList<ILayer>;
+            connectors = info.GetValue("connectors", typeof(IList<IConnector>)) as IList<IConnector>;
+            trainingMethod = (TrainingMethod)info.GetValue("trainingMethod", typeof(TrainingMethod));
+            jitterEpoch = info.GetInt32("jitterEpoch");
+            jitterNoiseLimit = info.GetDouble("jitterNoiseLimit");
         }
 
         /// <summary>
