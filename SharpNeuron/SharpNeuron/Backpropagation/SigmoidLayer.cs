@@ -25,7 +25,13 @@ namespace SharpNeuron.Backpropagation
             initializer = new NguyenWidrowFunction();
         }
 
-        
+        public void SetBias(double bias)
+        {
+            for (int i = 0; i < neurons.Length; i++)
+            {
+                neurons[i].Bias = bias;
+            }
+        }
 
         /// <summary>
         /// Sigmoid activation function

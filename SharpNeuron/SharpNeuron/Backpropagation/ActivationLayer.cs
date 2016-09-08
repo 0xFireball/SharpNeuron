@@ -9,10 +9,10 @@ namespace SharpNeuron.Backpropagation
     [Serializable]
     public abstract class ActivationLayer : Layer<ActivationNeuron>
     {
-        internal bool useFixedBiasValues = false;
+        private bool useFixedBiasValues = false;
 
         /// <summary>
-        /// Gets or sets a boolean representing whether to use fixed neuron bias values
+        /// Gets or sets a boolean representing whether to use fixed neuron bias values. If this is false, the bias value will change during learning.
         /// </summary>
         /// <value>
         /// A boolean indicating whether bias values of activation neurons learn while training.
@@ -62,7 +62,7 @@ namespace SharpNeuron.Backpropagation
             for (int i = 0; i < biasValues.Length; i++)
             {
                 neurons[i] = new ActivationNeuron(this);
-                neurons[i].bias = biasValues[i];
+                neurons[i].Bias = biasValues[i];
             }
         }
 
@@ -87,7 +87,7 @@ namespace SharpNeuron.Backpropagation
             double[] biasValues = new double[neurons.Length];
             for (int i = 0; i < neurons.Length; i++)
             {
-                biasValues[i] = neurons[i].bias;
+                biasValues[i] = neurons[i].Bias;
             }
 
             info.AddValue(nameof(biasValues), biasValues, typeof(double[]));
@@ -132,8 +132,8 @@ namespace SharpNeuron.Backpropagation
             double meanSquaredError = 0d;
             for (int i = 0; i < neurons.Length; i++)
             {
-                neurons[i].error = expectedOutput[i] - neurons[i].output;
-                meanSquaredError += neurons[i].error * neurons[i].error;
+                neurons[i].Error = expectedOutput[i] - neurons[i].Output;
+                meanSquaredError += neurons[i].Error * neurons[i].Error;
             }
             return meanSquaredError;
         }

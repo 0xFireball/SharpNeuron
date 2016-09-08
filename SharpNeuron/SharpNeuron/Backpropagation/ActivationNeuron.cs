@@ -7,10 +7,10 @@ namespace SharpNeuron.Backpropagation
     /// </summary>
     public class ActivationNeuron : INeuron
     {
-        internal double input;
-        internal double output;
-        internal double error;
-        internal double bias;
+        protected double input;
+        protected double output;
+        protected double error;
+        protected double bias;
 
         private readonly IList<ISynapse> sourceSynapses = new List<ISynapse>();
         private readonly IList<ISynapse> targetSynapses = new List<ISynapse>();
@@ -39,6 +39,7 @@ namespace SharpNeuron.Backpropagation
         public double Output
         {
             get { return output; }
+            set { output = value; }
         }
 
         /// <summary>
@@ -50,10 +51,11 @@ namespace SharpNeuron.Backpropagation
         public double Error
         {
             get { return error; }
+            set { error = value; }
         }
 
         /// <summary>
-        /// Gets the neuron bias
+        /// Gets or sets the neuron bias
         /// </summary>
         /// <value>
         /// The current value of neuron bias
@@ -61,6 +63,7 @@ namespace SharpNeuron.Backpropagation
         public double Bias
         {
             get { return bias; }
+            set { bias = value; }
         }
 
         /// <summary>
@@ -162,7 +165,7 @@ namespace SharpNeuron.Backpropagation
         /// </param>
         public void Learn(double learningRate)
         {
-            if (!parent.useFixedBiasValues)
+            if (!parent.UseFixedBiasValues)
             {
                 bias += learningRate * error;
             }
