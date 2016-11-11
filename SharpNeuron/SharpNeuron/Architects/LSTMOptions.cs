@@ -14,7 +14,7 @@ namespace SharpNeuron.Architects
         public bool OutputToGates { get; set; }
 
         public bool InputToOutput { get; set; }
-        
+
         public LSTMOptions CreateDefault()
         {
             return new LSTMOptions();

@@ -166,7 +166,7 @@ namespace SharpNeuron
             //Swap ith element with random elements for all position i.
             for (int i = 0; i < size; i++)
             {
-                int randomPosition = random.Next(size);
+                var randomPosition = random.Next(size);
                 int temp = randomOrder[i];
                 randomOrder[i] = randomOrder[randomPosition];
                 randomOrder[randomPosition] = temp;

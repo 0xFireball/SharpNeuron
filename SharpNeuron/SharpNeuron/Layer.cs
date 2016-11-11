@@ -298,7 +298,7 @@ namespace SharpNeuron
         public virtual void Learn(int currentIteration, int trainingEpochs)
         {
             // Validation delegated
-            double effectiveRate = learningRateFunction.GetLearningRate(currentIteration, trainingEpochs);
+            var effectiveRate = learningRateFunction.GetLearningRate(currentIteration, trainingEpochs);
             for (int i = 0; i < neurons.Length; i++)
             {
                 neurons[i].Learn(effectiveRate);

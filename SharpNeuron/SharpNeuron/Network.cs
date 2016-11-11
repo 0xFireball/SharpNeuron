@@ -255,7 +255,7 @@ namespace SharpNeuron
             connectors = new List<IConnector>();
 
             // Populate the lists by visiting layers topologically starting from input layer
-            Stack<ILayer> stack = new Stack<ILayer>();
+            var stack = new Stack<ILayer>();
             stack.Push(inputLayer);
 
             // Indegree map
@@ -492,7 +492,7 @@ namespace SharpNeuron
             //Initialize();
             for (int currentIteration = 0; currentIteration < trainingEpochs; currentIteration++)
             {
-                int[] randomOrder = Helper.GetRandomOrder(trainingSet.TrainingSampleCount);
+                var randomOrder = Helper.GetRandomOrder(trainingSet.TrainingSampleCount);
                 // Beginning a new training epoch
                 OnBeginEpoch(currentIteration, trainingSet);
 

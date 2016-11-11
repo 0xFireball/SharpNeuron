@@ -94,8 +94,8 @@ namespace SharpNeuron.Backpropagation
             }
             else if (connectionMode == ConnectionMode.OneToOne)
             {
-                IEnumerator<ActivationNeuron> sourceEnumerator = sourceLayer.Neurons.GetEnumerator();
-                IEnumerator<ActivationNeuron> targetEnumerator = targetLayer.Neurons.GetEnumerator();
+                var sourceEnumerator = sourceLayer.Neurons.GetEnumerator();
+                var targetEnumerator = targetLayer.Neurons.GetEnumerator();
                 while (sourceEnumerator.MoveNext() && targetEnumerator.MoveNext())
                 {
                     synapses[i++] = new BackpropagationSynapse(

@@ -121,7 +121,7 @@ namespace SharpNeuron
         {
             if (obj is TrainingSample)
             {
-                TrainingSample sample = (TrainingSample)obj;
+                var sample = (TrainingSample)obj;
                 int size;
                 if ((size = sample.inputVector.Length) == inputVector.Length)
                 {

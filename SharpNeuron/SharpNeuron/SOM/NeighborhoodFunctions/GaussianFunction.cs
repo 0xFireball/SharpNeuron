@@ -106,8 +106,8 @@ namespace SharpNeuron.SOM.NeighborhoodFunctions
             // Evaluate and update neighborhood value of each neuron
             foreach (PositionNeuron neuron in layer.Neurons)
             {
-                int dx = Math.Abs(winnerX - neuron.Coordinate.X);
-                int dy = Math.Abs(winnerY - neuron.Coordinate.Y);
+                var dx = Math.Abs(winnerX - neuron.Coordinate.X);
+                var dy = Math.Abs(winnerY - neuron.Coordinate.Y);
 
                 if (layer.IsRowCircular)
                 {

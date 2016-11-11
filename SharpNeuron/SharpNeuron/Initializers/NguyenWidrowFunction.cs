@@ -61,7 +61,7 @@ namespace SharpNeuron.Initializers
                 hiddenNeuronCount += targetConnector.TargetLayer.NeuronCount;
             }
 
-            double nGuyenWidrowFactor = NGuyenWidrowFactor(activationLayer.NeuronCount, hiddenNeuronCount);
+            var nGuyenWidrowFactor = NGuyenWidrowFactor(activationLayer.NeuronCount, hiddenNeuronCount);
 
             foreach (ActivationNeuron neuron in activationLayer.Neurons)
             {
@@ -82,7 +82,7 @@ namespace SharpNeuron.Initializers
         {
             Helper.ValidateNotNull(connector, "connector");
 
-            double nGuyenWidrowFactor = NGuyenWidrowFactor(
+            var nGuyenWidrowFactor = NGuyenWidrowFactor(
                 connector.SourceLayer.NeuronCount, connector.TargetLayer.NeuronCount);
 
             int synapsesPerNeuron = connector.SynapseCount / connector.TargetLayer.NeuronCount;
@@ -90,7 +90,7 @@ namespace SharpNeuron.Initializers
             foreach (INeuron neuron in connector.TargetLayer.Neurons)
             {
                 int i = 0;
-                double[] normalizedVector = Helper.GetRandomVector(synapsesPerNeuron, nGuyenWidrowFactor);
+                var normalizedVector = Helper.GetRandomVector(synapsesPerNeuron, nGuyenWidrowFactor);
                 foreach (BackpropagationSynapse synapse in connector.GetSourceSynapses(neuron))
                 {
                     synapse.Weight = normalizedVector[i++];
@@ -110,7 +110,7 @@ namespace SharpNeuron.Initializers
         public void Initialize(KohonenConnector connector)
         {
             Helper.ValidateNotNull(connector, "connector");
-            double nGuyenWidrowFactor = NGuyenWidrowFactor(
+            var nGuyenWidrowFactor = NGuyenWidrowFactor(
                 connector.SourceLayer.NeuronCount, connector.TargetLayer.NeuronCount);
 
             int synapsesPerNeuron = connector.SynapseCount / connector.TargetLayer.NeuronCount;
@@ -118,7 +118,7 @@ namespace SharpNeuron.Initializers
             foreach (INeuron neuron in connector.TargetLayer.Neurons)
             {
                 int i = 0;
-                double[] normalizedVector = Helper.GetRandomVector(synapsesPerNeuron, nGuyenWidrowFactor);
+                var normalizedVector = Helper.GetRandomVector(synapsesPerNeuron, nGuyenWidrowFactor);
                 foreach (KohonenSynapse synapse in connector.GetSourceSynapses(neuron))
                 {
                     synapse.Weight = normalizedVector[i++];

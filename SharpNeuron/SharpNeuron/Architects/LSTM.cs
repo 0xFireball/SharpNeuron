@@ -1,5 +1,4 @@
 ﻿using SharpNeuron.Backpropagation;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -14,9 +13,9 @@ namespace SharpNeuron.Architects
             var outputCount = layerList.Last();
             var hiddenLayerSizes = layerList.Skip(1).Take(layerList.Count - 2);
 
-            LinearLayer inputLayer = new LinearLayer(inputCount);
-            SigmoidLayer outputLayer = new SigmoidLayer(outputCount);
-            List<SigmoidLayer> hiddenLayers = new List<SigmoidLayer>();
+            var inputLayer = new LinearLayer(inputCount);
+            var outputLayer = new SigmoidLayer(outputCount);
+            var hiddenLayers = new List<SigmoidLayer>();
             ActivationLayer previousLayer = null;
 
             foreach (var hiddenLayerNeuronCount in hiddenLayerSizes)
@@ -103,7 +102,6 @@ namespace SharpNeuron.Architects
 
                 previousLayer = memoryCell;
             }
-
         }
     }
 }

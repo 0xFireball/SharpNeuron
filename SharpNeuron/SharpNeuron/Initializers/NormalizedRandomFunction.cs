@@ -30,7 +30,7 @@ namespace SharpNeuron.Initializers
             Helper.ValidateNotNull(activationLayer, "activationLayer");
 
             int i = 0;
-            double[] normalized = Helper.GetRandomVector(activationLayer.NeuronCount, 1d);
+            var normalized = Helper.GetRandomVector(activationLayer.NeuronCount, 1d);
             foreach (ActivationNeuron neuron in activationLayer.Neurons)
             {
                 neuron.Bias = normalized[i++];
@@ -51,7 +51,7 @@ namespace SharpNeuron.Initializers
             Helper.ValidateNotNull(connector, "connector");
 
             int i = 0;
-            double[] normalized = Helper.GetRandomVector(connector.SynapseCount, 1d);
+            var normalized = Helper.GetRandomVector(connector.SynapseCount, 1d);
             foreach (BackpropagationSynapse synapse in connector.Synapses)
             {
                 synapse.Weight = normalized[i++];
@@ -72,7 +72,7 @@ namespace SharpNeuron.Initializers
             Helper.ValidateNotNull(connector, "connector");
 
             int i = 0;
-            double[] normalized = Helper.GetRandomVector(connector.SynapseCount, 1d);
+            var normalized = Helper.GetRandomVector(connector.SynapseCount, 1d);
             foreach (KohonenSynapse synapse in connector.Synapses)
             {
                 synapse.Weight = normalized[i++];
