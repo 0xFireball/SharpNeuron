@@ -7,7 +7,7 @@ namespace SharpNeuron.Backpropagation
     /// </summary>
     public abstract class ActivationLayer : Layer<ActivationNeuron>
     {
-        protected bool useFixedBiasValues = false;
+        protected bool useFixedBiasValues;
 
         /// <summary>
         /// Gets or sets a boolean representing whether to use fixed neuron bias values. If this is false, the bias value will change during learning.
@@ -71,7 +71,7 @@ namespace SharpNeuron.Backpropagation
             Helper.ValidateNotNull(expectedOutput, "expectedOutput");
             if (expectedOutput.Length != neurons.Length)
             {
-                throw new ArgumentException("Length of ouput array should be same as neuron count", "expectedOutput");
+                throw new ArgumentException("Length of ouput array should be same as neuron count", nameof(expectedOutput));
             }
 
             // Set errors, evaluate mean squared error

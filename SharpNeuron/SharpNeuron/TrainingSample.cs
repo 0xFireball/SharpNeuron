@@ -124,7 +124,8 @@
                 {
                     for (int i = 0; i < size; i++)
                     {
-                        if (inputVector[i] != sample.inputVector[i])
+                        //make sure they're unequal, use floating point comparison
+                        if (System.Math.Abs(inputVector[i] - sample.inputVector[i]) > double.Epsilon)
                         {
                             return false;
                         }

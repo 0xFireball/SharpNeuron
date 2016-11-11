@@ -194,7 +194,7 @@ namespace SharpNeuron
 
             if (neurons.Length != input.Length)
             {
-                throw new ArgumentException("Length of input array should be same as neuron count", "input");
+                throw new ArgumentException("Length of input array should be same as neuron count", nameof(input));
             }
 
             // Bind inputs

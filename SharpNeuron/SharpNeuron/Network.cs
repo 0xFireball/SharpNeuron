@@ -291,7 +291,7 @@ namespace SharpNeuron
             // The last layer should be same as output layer
             if (outputLayer != this.outputLayer)
             {
-                throw new ArgumentException("The outputLayer is invalid", "outputLayer");
+                throw new ArgumentException("The outputLayer is invalid", nameof(outputLayer));
             }
             // Initialize the newly created network
             Initialize();

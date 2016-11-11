@@ -78,39 +78,42 @@
         private void ConstructSynapses()
         {
             int i = 0;
-            if (connectionMode == ConnectionMode.AllToAll)
+            switch (connectionMode)
             {
-                foreach (ActivationNeuron targetNeuron in targetLayer.Neurons)
-                {
-                    foreach (ActivationNeuron sourceNeuron in sourceLayer.Neurons)
+                case ConnectionMode.AllToAll:
+                    foreach (ActivationNeuron targetNeuron in targetLayer.Neurons)
                     {
-                        synapses[i++] = new BackpropagationSynapse(sourceNeuron, targetNeuron, this);
-                    }
-                }
-            }
-            else if (connectionMode == ConnectionMode.OneToOne)
-            {
-                var sourceEnumerator = sourceLayer.Neurons.GetEnumerator();
-                var targetEnumerator = targetLayer.Neurons.GetEnumerator();
-                while (sourceEnumerator.MoveNext() && targetEnumerator.MoveNext())
-                {
-                    synapses[i++] = new BackpropagationSynapse(
-                        sourceEnumerator.Current, targetEnumerator.Current, this);
-                }
-            }
-            else if (connectionMode == ConnectionMode.AllToElse)
-            {
-                foreach (ActivationNeuron targetNeuron in targetLayer.Neurons)
-                {
-                    foreach (ActivationNeuron sourceNeuron in sourceLayer.Neurons)
-                    {
-                        if (sourceNeuron == targetNeuron)
+                        foreach (ActivationNeuron sourceNeuron in sourceLayer.Neurons)
                         {
-                            continue; //Skip connecting to self
+                            synapses[i++] = new BackpropagationSynapse(sourceNeuron, targetNeuron, this);
                         }
-                        synapses[i++] = new BackpropagationSynapse(sourceNeuron, targetNeuron, this);
                     }
-                }
+
+                    break;
+                case ConnectionMode.OneToOne:
+                    var sourceEnumerator = sourceLayer.Neurons.GetEnumerator();
+                    var targetEnumerator = targetLayer.Neurons.GetEnumerator();
+                    while (sourceEnumerator.MoveNext() && targetEnumerator.MoveNext())
+                    {
+                        synapses[i++] = new BackpropagationSynapse(
+                            sourceEnumerator.Current, targetEnumerator.Current, this);
+                    }
+
+                    break;
+                case ConnectionMode.AllToElse:
+                    foreach (ActivationNeuron targetNeuron in targetLayer.Neurons)
+                    {
+                        foreach (ActivationNeuron sourceNeuron in sourceLayer.Neurons)
+                        {
+                            if (sourceNeuron == targetNeuron)
+                            {
+                                continue; //Skip connecting to self
+                            }
+                            synapses[i++] = new BackpropagationSynapse(sourceNeuron, targetNeuron, this);
+                        }
+                    }
+
+                    break;
             }
         }
 

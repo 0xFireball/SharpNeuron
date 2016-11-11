@@ -141,12 +141,12 @@ namespace SharpNeuron
             if (sample.InputVector.Length != inputVectorLength)
             {
                 throw new ArgumentException
-                    ("Input vector must be of size " + inputVectorLength, "sample");
+                    ("Input vector must be of size " + inputVectorLength, nameof(sample));
             }
             if (sample.OutputVector.Length != outputVectorLength)
             {
                 throw new ArgumentException
-                    ("Output vector must be of size " + outputVectorLength, "sample");
+                    ("Output vector must be of size " + outputVectorLength, nameof(sample));
             }
 
             // Note that the reference is being added. (Sample is immutable)
