@@ -1,13 +1,12 @@
 ﻿using SharpNeuron.Initializers;
 using System;
-using System.Runtime.Serialization;
 
 namespace SharpNeuron.Backpropagation
 {
     /// <summary>
     /// An <see cref="ActivationLayer"/> using tanh activation function
     /// </summary>
-    
+
     public class TanhLayer : ActivationLayer
     {
         /// <summary>

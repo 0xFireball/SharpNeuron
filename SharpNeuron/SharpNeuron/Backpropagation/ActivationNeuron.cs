@@ -197,7 +197,7 @@ namespace SharpNeuron.Backpropagation
             gateSynapses.Add(connection);
 
             var neuron = connection.TargetNeuron;
-            
+
             //keep track
             //TODO: implement trace
         }

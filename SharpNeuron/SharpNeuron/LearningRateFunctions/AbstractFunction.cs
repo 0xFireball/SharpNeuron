@@ -1,12 +1,9 @@
-﻿using System;
-using System.Runtime.Serialization;
-
-namespace SharpNeuron.LearningRateFunctions
+﻿namespace SharpNeuron.LearningRateFunctions
 {
     /// <summary>
     /// An abstract base class for a learning rate function.
     /// </summary>
-    
+
     public abstract class AbstractFunction : ILearningRateFunction
     {
         /// <summary>

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Runtime.Serialization;
-
-namespace SharpNeuron.Backpropagation
+﻿namespace SharpNeuron.Backpropagation
 {
     /// <summary>
     /// A Backpropagation Connector is an <see cref="IConnector"/> which consists of a collection of
@@ -102,7 +98,6 @@ namespace SharpNeuron.Backpropagation
                         sourceEnumerator.Current, targetEnumerator.Current, this);
                 }
             }
-
             else if (connectionMode == ConnectionMode.AllToElse)
             {
                 foreach (ActivationNeuron targetNeuron in targetLayer.Neurons)

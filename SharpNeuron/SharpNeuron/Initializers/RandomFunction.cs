@@ -1,14 +1,12 @@
 ﻿using SharpNeuron.Backpropagation;
 using SharpNeuron.SOM;
-using System;
-using System.Runtime.Serialization;
 
 namespace SharpNeuron.Initializers
 {
     /// <summary>
     /// An <see cref="IInitializer"/> using random function
     /// </summary>
-    
+
     public class RandomFunction : IInitializer
     {
         private readonly double minLimit;

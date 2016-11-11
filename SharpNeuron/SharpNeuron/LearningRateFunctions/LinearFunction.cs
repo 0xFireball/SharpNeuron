@@ -1,13 +1,10 @@
-﻿using System;
-using System.Runtime.Serialization;
-
-namespace SharpNeuron.LearningRateFunctions
+﻿namespace SharpNeuron.LearningRateFunctions
 {
     /// <summary>
     /// Linear Learning Rate Function. As the training progresses, the learning rate uniformly
     /// changes from its initial value to the final value.
     /// </summary>
-    
+
     public sealed class LinearFunction : AbstractFunction
     {
         /// <summary>

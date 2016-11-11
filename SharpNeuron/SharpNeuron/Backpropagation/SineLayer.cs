@@ -1,13 +1,12 @@
 ﻿using SharpNeuron.Initializers;
 using System;
-using System.Runtime.Serialization;
 
 namespace SharpNeuron.Backpropagation
 {
     /// <summary>
     /// An <see cref="ActivationLayer"/> using sine activation function
     /// </summary>
-    
+
     public class SineLayer : ActivationLayer
     {
         /// <summary>

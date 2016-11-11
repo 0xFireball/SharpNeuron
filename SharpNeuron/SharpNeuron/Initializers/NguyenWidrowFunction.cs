@@ -1,7 +1,6 @@
 ﻿using SharpNeuron.Backpropagation;
 using SharpNeuron.SOM;
 using System;
-using System.Runtime.Serialization;
 
 namespace SharpNeuron.Initializers
 {

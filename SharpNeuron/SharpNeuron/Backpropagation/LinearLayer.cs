@@ -1,7 +1,4 @@
-﻿using System;
-using System.Runtime.Serialization;
-
-namespace SharpNeuron.Backpropagation
+﻿namespace SharpNeuron.Backpropagation
 {
     /// <summary>
     /// An <see cref="ActivationLayer"/> using linear activation function

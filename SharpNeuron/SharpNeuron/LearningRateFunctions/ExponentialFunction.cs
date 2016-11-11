@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Runtime.Serialization;
 
 namespace SharpNeuron.LearningRateFunctions
 {
@@ -7,7 +6,7 @@ namespace SharpNeuron.LearningRateFunctions
     /// Exponential Learning Rate Function. As training progresses, The learning rate exponentially
     /// changes from its initial value to the final value.
     /// </summary>
-    
+
     public sealed class ExponentialFunction : AbstractFunction
     {
         private readonly double logFinalByInitial;

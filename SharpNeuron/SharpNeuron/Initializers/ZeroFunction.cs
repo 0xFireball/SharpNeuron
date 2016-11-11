@@ -1,7 +1,4 @@
-﻿using System;
-using System.Runtime.Serialization;
-
-namespace SharpNeuron.Initializers
+﻿namespace SharpNeuron.Initializers
 {
     /// <summary>
     /// An <see cref="IInitializer"/> using zero function

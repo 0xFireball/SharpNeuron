@@ -1,12 +1,9 @@
-﻿using System;
-using System.Runtime.Serialization;
-
-namespace SharpNeuron.Backpropagation
+﻿namespace SharpNeuron.Backpropagation
 {
     /// <summary>
     /// This class extends a <see cref="Network"/> and represents a Backpropagation neural network.
     /// </summary>
-    
+
     public class BackpropagationNetwork : Network
     {
         private double meanSquaredError;
