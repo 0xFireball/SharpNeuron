@@ -7,7 +7,7 @@ namespace SharpNeuron.LearningRateFunctions
     /// Linear Learning Rate Function. As the training progresses, the learning rate uniformly
     /// changes from its initial value to the final value.
     /// </summary>
-    [Serializable]
+    
     public sealed class LinearFunction : AbstractFunction
     {
         /// <summary>
@@ -21,23 +21,6 @@ namespace SharpNeuron.LearningRateFunctions
         /// </param>
         public LinearFunction(double initialLearningRate, double finalLearningRate)
             : base(initialLearningRate, finalLearningRate)
-        {
-        }
-
-        /// <summary>
-        /// Deserialization Constructor
-        /// </summary>
-        /// <param name="info">
-        /// Serialization information to deserialize and obtain the data
-        /// </param>
-        /// <param name="context">
-        /// Serialization context to use
-        /// </param>
-        /// <exception cref="ArgumentNullException">
-        /// if <c>info</c> is <c>null</c>
-        /// </exception>
-        public LinearFunction(SerializationInfo info, StreamingContext context)
-            : base(info, context)
         {
         }
 

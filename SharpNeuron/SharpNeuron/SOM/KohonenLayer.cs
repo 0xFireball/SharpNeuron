@@ -8,7 +8,6 @@ namespace SharpNeuron.SOM
     /// <summary>
     /// Kohonen Layer is a layer containing position neurons.
     /// </summary>
-    [Serializable]
     public class KohonenLayer : Layer<PositionNeuron>
     {
         private readonly Size size;
@@ -232,58 +231,6 @@ namespace SharpNeuron.SOM
                     neurons[k++] = new PositionNeuron(new Point(x, y), this);
                 }
             }
-        }
-
-        /// <summary>
-        /// Deserialization Constructor
-        /// </summary>
-        /// <param name="info">
-        /// Serialization information to deserialize and obtain the data
-        /// </param>
-        /// <param name="context">
-        /// Serialization context to use
-        /// </param>
-        /// <exception cref="ArgumentNullException">
-        /// If <c>info</c> is <c>null</c>
-        /// </exception>
-        public KohonenLayer(SerializationInfo info, StreamingContext context)
-            : base(info, context)
-        {
-            size.Height = info.GetInt32("size.Height");
-            size.Width = info.GetInt32("size.Width");
-
-            topology = (LatticeTopology)info.GetValue("topology", typeof(LatticeTopology));
-
-            neighborhoodFunction
-                = info.GetValue("neighborhoodFunction", typeof(INeighborhoodFunction))
-                as INeighborhoodFunction;
-
-            isRowCircular = info.GetBoolean("isRowCircular");
-            isColumnCircular = info.GetBoolean("isColumnCircular");
-        }
-
-        /// <summary>
-        /// Populates the serialization info with the data needed to serialize the layer
-        /// </summary>
-        /// <param name="info">
-        /// The serialization info to populate the data with
-        /// </param>
-        /// <param name="context">
-        /// The serialization context to use
-        /// </param>
-        /// <exception cref="ArgumentNullException">
-        /// If <c>info</c> is <c>null</c>
-        /// </exception>
-        public override void GetObjectData(SerializationInfo info, StreamingContext context)
-        {
-            base.GetObjectData(info, context);
-
-            info.AddValue("topology", topology);
-            info.AddValue("size.Height", size.Height);
-            info.AddValue("size.Width", size.Width);
-            info.AddValue("neighborhoodFunction", neighborhoodFunction, typeof(INeighborhoodFunction));
-            info.AddValue("isRowCircular", isRowCircular);
-            info.AddValue("isColumnCircular", isColumnCircular);
         }
 
         /// <summary>

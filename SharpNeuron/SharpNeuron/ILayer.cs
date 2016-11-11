@@ -7,7 +7,7 @@ namespace SharpNeuron
     /// This interface represents a Layer in a neural network. A layer is a container for similar
     /// neurons. No two neurons within a layer can be connected to each other.
     /// </summary>
-    public interface ILayer : ISerializable
+    public interface ILayer
     {
         /// <summary>
         /// Gets the neuron count

@@ -8,7 +8,7 @@ namespace SharpNeuron
     /// Initializer interface. An initializer should define initialization methods for all concrete
     /// initializable layers and connectors.
     /// </summary>
-    public interface IInitializer : ISerializable
+    public interface IInitializer
     {
         /// <summary>
         /// Initializes bias values of activation neurons in an activation layer.

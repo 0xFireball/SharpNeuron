@@ -26,7 +26,7 @@ namespace SharpNeuron
     /// network against a particular input.
     /// </para>
     /// </summary>
-    public interface INetwork : ISerializable
+    public interface INetwork
     {
         /// <summary>
         /// Gets the input layer of the network

@@ -27,7 +27,7 @@ namespace SharpNeuron
     /// network against a particular input.
     /// </para>
     /// </summary>
-    [Serializable]
+    
     public abstract class Network : INetwork
     {
         /// <summary>
@@ -296,60 +296,6 @@ namespace SharpNeuron
             }
             // Initialize the newly created network
             Initialize();
-        }
-
-        /// <summary>
-        /// Deserialization constructor. It is assumed that the serialization info provided contains
-        /// valid data.
-        /// </summary>
-        /// <param name="info">
-        /// The serialization info to deserialize and obtain values
-        /// </param>
-        /// <param name="context">
-        /// Serialization context
-        /// </param>
-        /// <exception cref="ArgumentNullException">
-        /// If <c>info</c> is <c>null</c>
-        /// </exception>
-        public Network(SerializationInfo info, StreamingContext context)
-        {
-            // Validate
-            Helper.ValidateNotNull(info, "info");
-
-            inputLayer = info.GetValue("inputLayer", typeof(ILayer)) as ILayer;
-            outputLayer = info.GetValue("outputLayer", typeof(ILayer)) as ILayer;
-            layers = info.GetValue("layers", typeof(IList<ILayer>)) as IList<ILayer>;
-            connectors = info.GetValue("connectors", typeof(IList<IConnector>)) as IList<IConnector>;
-            trainingMethod = (TrainingMethod)info.GetValue("trainingMethod", typeof(TrainingMethod));
-            jitterEpoch = info.GetInt32("jitterEpoch");
-            jitterNoiseLimit = info.GetDouble("jitterNoiseLimit");
-        }
-
-        /// <summary>
-        /// Populates the serialization info with the data necessary to serialize the network.
-        /// </summary>
-        /// <param name="info">
-        /// The info to populate serialization data with
-        /// </param>
-        /// <param name="context">
-        /// Serialization context to use
-        /// </param>
-        /// <exception cref="ArgumentNullException">
-        /// If <c>info</c> is <c>null</c>
-        /// </exception>
-        public virtual void GetObjectData(SerializationInfo info, StreamingContext context)
-        {
-            // Validate
-            Helper.ValidateNotNull(info, "info");
-
-            // Populate data
-            info.AddValue("inputLayer", inputLayer, typeof(ILayer));
-            info.AddValue("outputLayer", outputLayer, typeof(ILayer));
-            info.AddValue("layers", layers, typeof(IList<ILayer>));
-            info.AddValue("connectors", connectors, typeof(IList<IConnector>));
-            info.AddValue("trainingMethod", trainingMethod, typeof(TrainingMethod));
-            info.AddValue("jitterNoiseLimit", jitterNoiseLimit);
-            info.AddValue("jitterEpoch", jitterEpoch);
         }
 
         /// <summary>

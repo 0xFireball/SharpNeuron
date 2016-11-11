@@ -11,7 +11,7 @@ namespace SharpNeuron
     /// <typeparam name="TSourceLayer">Type of Source Layer</typeparam>
     /// <typeparam name="TTargetLayer">Type of Target Layer</typeparam>
     /// <typeparam name="TSynapse">Type of Synapse</typeparam>
-    [Serializable]
+    
     public abstract class Connector<TSourceLayer, TTargetLayer, TSynapse> : IConnector
         where TSourceLayer : ILayer
         where TTargetLayer : ILayer
@@ -191,63 +191,6 @@ namespace SharpNeuron
                 default:
                     throw new ArgumentException("Invalid Connection Mode", nameof(connectionMode));
             }
-        }
-
-        /// <summary>
-        /// Deserialization constructor
-        /// </summary>
-        /// <param name="info">
-        /// Serialization information to deserialize and obtain the data
-        /// </param>
-        /// <param name="context">
-        /// Serialization context to use
-        /// </param>
-        /// <exception cref="ArgumentNullException">
-        /// If <c>info</c> is <c>null</c>
-        /// </exception>
-        protected Connector(SerializationInfo info, StreamingContext context)
-        {
-            Helper.ValidateNotNull(info, "info");
-
-            sourceLayer = (TSourceLayer)info.GetValue("sourceLayer", typeof(TSourceLayer));
-            targetLayer = (TTargetLayer)info.GetValue("targetLayer", typeof(TTargetLayer));
-            initializer = (IInitializer)info.GetValue("initializer", typeof(IInitializer));
-
-            connectionMode = (ConnectionMode)info.GetValue("connectionMode", typeof(ConnectionMode));
-
-            targetLayer.SourceConnectors.Add(this);
-            sourceLayer.TargetConnectors.Add(this);
-
-            if (connectionMode == ConnectionMode.AllToAll)
-            {
-                synapses = new TSynapse[sourceLayer.NeuronCount * targetLayer.NeuronCount];
-            }
-            else
-            {
-                synapses = new TSynapse[sourceLayer.NeuronCount];
-            }
-        }
-
-        /// <summary>
-        /// Populates the serialization info with the data needed to serialize the connector
-        /// </summary>
-        /// <param name="info">
-        /// The serialization info to populate the data with
-        /// </param>
-        /// <param name="context">
-        /// The serialization context to use
-        /// </param>
-        /// <exception cref="ArgumentNullException">
-        /// If <c>info</c> is <c>null</c>
-        /// </exception>
-        public virtual void GetObjectData(SerializationInfo info, StreamingContext context)
-        {
-            Helper.ValidateNotNull(info, "info");
-            info.AddValue("sourceLayer", sourceLayer, typeof(TSourceLayer));
-            info.AddValue("targetLayer", targetLayer, typeof(TTargetLayer));
-            info.AddValue("initializer", initializer, typeof(IInitializer));
-
-            info.AddValue("connectionMode", connectionMode, typeof(ConnectionMode));
         }
 
         /// <summary>

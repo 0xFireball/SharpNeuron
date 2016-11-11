@@ -6,7 +6,7 @@ namespace SharpNeuron.LearningRateFunctions
     /// <summary>
     /// An abstract base class for a learning rate function.
     /// </summary>
-    [Serializable]
+    
     public abstract class AbstractFunction : ILearningRateFunction
     {
         /// <summary>
@@ -54,46 +54,6 @@ namespace SharpNeuron.LearningRateFunctions
         {
             this.initialLearningRate = initialLearningRate;
             this.finalLearningRate = finalLearningRate;
-        }
-
-        /// <summary>
-        /// Deserialization Constructor
-        /// </summary>
-        /// <param name="info">
-        /// Serialization information to deserialize and obtain the data
-        /// </param>
-        /// <param name="context">
-        /// Serialization context to use
-        /// </param>
-        /// <exception cref="ArgumentNullException">
-        /// if <c>info</c> is <c>null</c>
-        /// </exception>
-        public AbstractFunction(SerializationInfo info, StreamingContext context)
-        {
-            Helper.ValidateNotNull(info, "info");
-
-            initialLearningRate = info.GetDouble("initialLearningRate");
-            finalLearningRate = info.GetDouble("finalLearningRate");
-        }
-
-        /// <summary>
-        /// Populates the serialization info with the data needed to serialize the layer
-        /// </summary>
-        /// <param name="info">
-        /// The serialization info to populate the data with
-        /// </param>
-        /// <param name="context">
-        /// The serialization context to use
-        /// </param>
-        /// <exception cref="ArgumentNullException">
-        /// if <c>info</c> is <c>null</c>
-        /// </exception>
-        public void GetObjectData(SerializationInfo info, StreamingContext context)
-        {
-            Helper.ValidateNotNull(info, "info");
-
-            info.AddValue("initialLearningRate", initialLearningRate);
-            info.AddValue("finalLearningRate", finalLearningRate);
         }
 
         /// <summary>

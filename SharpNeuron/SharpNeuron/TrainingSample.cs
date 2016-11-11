@@ -6,8 +6,7 @@ namespace SharpNeuron
     /// <summary>
     /// This class represents a training sample used to train a neural network
     /// </summary>
-    [Serializable]
-    public class TrainingSample : ISerializable
+    public class TrainingSample
     {
         private readonly double[] inputVector;
         private readonly double[] outputVector;
@@ -107,54 +106,6 @@ namespace SharpNeuron
             {
                 hashCode ^= inputVector[i].GetHashCode();
             }
-        }
-
-        /// <summary>
-        /// Deserialization Constructor
-        /// </summary>
-        /// <param name="info">
-        /// Serialization information to deserialize and obtain the data
-        /// </param>
-        /// <param name="context">
-        /// Serialization context to use
-        /// </param>
-        /// <exception cref="ArgumentNullException">
-        /// If <c>info</c> is <c>null</c>
-        /// </exception>
-        public TrainingSample(SerializationInfo info, StreamingContext context)
-        {
-            Helper.ValidateNotNull(info, "info");
-
-            inputVector = (double[])info.GetValue("inputVector", typeof(double[]));
-            outputVector = (double[])info.GetValue("outputVector", typeof(double[]));
-            normalizedInputVector = Helper.Normalize(inputVector);
-            normalizedOutputVector = Helper.Normalize(outputVector);
-
-            hashCode = 0;
-            for (int i = 0; i < inputVector.Length; i++)
-            {
-                hashCode ^= inputVector[i].GetHashCode();
-            }
-        }
-
-        /// <summary>
-        /// Populates the serialization info with the data needed to serialize the training sample
-        /// </summary>
-        /// <param name="info">
-        /// The serialization info to populate the data with
-        /// </param>
-        /// <param name="context">
-        /// The serialization context to use
-        /// </param>
-        /// <exception cref="ArgumentNullException">
-        /// If <c>info</c> is <c>null</c>
-        /// </exception>
-        public void GetObjectData(SerializationInfo info, StreamingContext context)
-        {
-            Helper.ValidateNotNull(info, "info");
-
-            info.AddValue("inputVector", inputVector, typeof(double[]));
-            info.AddValue("outputVector", outputVector, typeof(double[]));
         }
 
         /// <summary>

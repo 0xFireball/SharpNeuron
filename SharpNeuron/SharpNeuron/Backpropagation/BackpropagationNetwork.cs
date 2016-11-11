@@ -6,7 +6,7 @@ namespace SharpNeuron.Backpropagation
     /// <summary>
     /// This class extends a <see cref="Network"/> and represents a Backpropagation neural network.
     /// </summary>
-    [Serializable]
+    
     public class BackpropagationNetwork : Network
     {
         private double meanSquaredError;
@@ -43,23 +43,6 @@ namespace SharpNeuron.Backpropagation
         {
             meanSquaredError = 0d;
             isValidMSE = false;
-        }
-
-        /// <summary>
-        /// Deserialization Constructor
-        /// </summary>
-        /// <param name="info">
-        /// Serialization information to deserialize and obtain the data
-        /// </param>
-        /// <param name="context">
-        /// Serialization context to use
-        /// </param>
-        /// <exception cref="ArgumentNullException">
-        /// If <c>info</c> is <c>null</c>
-        /// </exception>
-        public BackpropagationNetwork(SerializationInfo info, StreamingContext context)
-            : base(info, context)
-        {
         }
 
         /// <summary>

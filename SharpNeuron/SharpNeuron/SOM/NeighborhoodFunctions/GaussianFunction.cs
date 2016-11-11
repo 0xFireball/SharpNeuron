@@ -6,7 +6,6 @@ namespace SharpNeuron.SOM.NeighborhoodFunctions
     /// <summary>
     /// Gaussian Neighborhood Function. It is a continuous bell shaped curve centered at winner neuron.
     /// </summary>
-    [Serializable]
     public sealed class GaussianFunction : INeighborhoodFunction
     {
         /*
@@ -60,42 +59,6 @@ namespace SharpNeuron.SOM.NeighborhoodFunctions
             // so, learning radius = 1.17741 * sigma
 
             sigma = learningRadius / 1.17741d;
-        }
-
-        /// <summary>
-        /// Deserialization Constructor
-        /// </summary>
-        /// <param name="info">
-        /// Serialization information to deserialize and obtain the data
-        /// </param>
-        /// <param name="context">
-        /// Serialization context to use
-        /// </param>
-        /// <exception cref="ArgumentNullException">
-        /// If <c>info</c> is <c>null</c>
-        /// </exception>
-        public GaussianFunction(SerializationInfo info, StreamingContext context)
-        {
-            Helper.ValidateNotNull(info, "info");
-            sigma = info.GetDouble("sigma");
-        }
-
-        /// <summary>
-        /// Populates the serialization info with the data needed to serialize the neighborhood function
-        /// </summary>
-        /// <param name="info">
-        /// The serialization info to populate the data with
-        /// </param>
-        /// <param name="context">
-        /// The serialization context to use
-        /// </param>
-        /// <exception cref="ArgumentNullException">
-        /// If <c>info</c> is <c>null</c>
-        /// </exception>
-        public void GetObjectData(SerializationInfo info, StreamingContext context)
-        {
-            Helper.ValidateNotNull(info, "info");
-            info.AddValue("sigma", sigma);
         }
 
         /// <summary>

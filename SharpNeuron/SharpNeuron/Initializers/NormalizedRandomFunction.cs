@@ -17,32 +17,6 @@ namespace SharpNeuron.Initializers
         }
 
         /// <summary>
-        /// Deserialization Constructor
-        /// </summary>
-        /// <param name="info">
-        /// Serialization information to deserialize and obtain the data
-        /// </param>
-        /// <param name="context">
-        /// Serialization context to use
-        /// </param>
-        public NormalizedRandomFunction(SerializationInfo info, StreamingContext context)
-        {
-        }
-
-        /// <summary>
-        /// Populates the serialization info with the data needed to serialize the initializer
-        /// </summary>
-        /// <param name="info">
-        /// The serialization info to populate the data with
-        /// </param>
-        /// <param name="context">
-        /// The serialization context to use
-        /// </param>
-        public void GetObjectData(SerializationInfo info, StreamingContext context)
-        {
-        }
-
-        /// <summary>
         /// Initializes bias values of activation neurons in the activation layer.
         /// </summary>
         /// <param name="activationLayer">

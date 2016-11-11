@@ -7,7 +7,7 @@ namespace SharpNeuron.Backpropagation
     /// <summary>
     /// An <see cref="ActivationLayer"/> using sine activation function
     /// </summary>
-    [Serializable]
+    
     public class SineLayer : ActivationLayer
     {
         /// <summary>
@@ -57,23 +57,6 @@ namespace SharpNeuron.Backpropagation
         public override double Derivative(double input, double output)
         {
             return Math.Sqrt(1 - output * output);
-        }
-
-        /// <summary>
-        /// Deserialization constructor
-        /// </summary>
-        /// <param name="info">
-        /// The info to deserialize
-        /// </param>
-        /// <param name="context">
-        /// The serialization context to use
-        /// </param>
-        /// <exception cref="ArgumentNullException">
-        /// If <c>info</c> is <c>null</c>
-        /// </exception>
-        public SineLayer(SerializationInfo info, StreamingContext context)
-            : base(info, context)
-        {
         }
     }
 }

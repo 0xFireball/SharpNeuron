@@ -7,7 +7,7 @@ namespace SharpNeuron
     /// This interface represents a connector. A connector is a collection of synapses connecting
     /// two layers in a network.
     /// </summary>
-    public interface IConnector : ISerializable
+    public interface IConnector
     {
         /// <summary>
         /// Gets the source layer

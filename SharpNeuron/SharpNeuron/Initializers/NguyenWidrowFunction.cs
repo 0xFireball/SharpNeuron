@@ -8,7 +8,6 @@ namespace SharpNeuron.Initializers
     /// <summary>
     /// An <see cref="IInitializer"/> using Nguyen Widrow function.
     /// </summary>
-    [Serializable]
     public class NguyenWidrowFunction : IInitializer
     {
         private readonly double outputRange;
@@ -41,42 +40,6 @@ namespace SharpNeuron.Initializers
         public NguyenWidrowFunction(double outputRange)
         {
             this.outputRange = outputRange;
-        }
-
-        /// <summary>
-        /// Deserialization Constructor
-        /// </summary>
-        /// <param name="info">
-        /// Serialization information to deserialize and obtain the data
-        /// </param>
-        /// <param name="context">
-        /// Serialization context to use
-        /// </param>
-        /// <exception cref="ArgumentNullException">
-        /// If <c>info</c> is <c>null</c>
-        /// </exception>
-        public NguyenWidrowFunction(SerializationInfo info, StreamingContext context)
-        {
-            Helper.ValidateNotNull(info, "info");
-            outputRange = info.GetDouble("outputRange");
-        }
-
-        /// <summary>
-        /// Populates the serialization info with the data needed to serialize the initializer
-        /// </summary>
-        /// <param name="info">
-        /// The serialization info to populate the data with
-        /// </param>
-        /// <param name="context">
-        /// The serialization context to use
-        /// </param>
-        /// <exception cref="ArgumentNullException">
-        /// If <c>info</c> is <c>null</c>
-        /// </exception>
-        public void GetObjectData(SerializationInfo info, StreamingContext context)
-        {
-            Helper.ValidateNotNull(info, "info");
-            info.AddValue("outputRange", outputRange);
         }
 
         /// <summary>

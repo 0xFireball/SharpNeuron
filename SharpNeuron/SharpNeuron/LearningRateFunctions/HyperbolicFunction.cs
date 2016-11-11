@@ -7,7 +7,6 @@ namespace SharpNeuron.LearningRateFunctions
     /// Hyperbolic Learning Rate Function. As training progresses, The learning rate hyperbolically
     /// changes from its initial value to the final value.
     /// </summary>
-    [Serializable]
     public sealed class HyperbolicFunction : AbstractFunction
     {
         private readonly double product;
@@ -24,24 +23,6 @@ namespace SharpNeuron.LearningRateFunctions
         /// </param>
         public HyperbolicFunction(double initialLearningRate, double finalLearningRate)
             : base(initialLearningRate, finalLearningRate)
-        {
-            product = initialLearningRate * finalLearningRate;
-        }
-
-        /// <summary>
-        /// Deserialization Constructor
-        /// </summary>
-        /// <param name="info">
-        /// Serialization information to deserialize and obtain the data
-        /// </param>
-        /// <param name="context">
-        /// Serialization context to use
-        /// </param>
-        /// <exception cref="ArgumentNullException">
-        /// if <c>info</c> is <c>null</c>
-        /// </exception>
-        public HyperbolicFunction(SerializationInfo info, StreamingContext context)
-            : base(info, context)
         {
             product = initialLearningRate * finalLearningRate;
         }

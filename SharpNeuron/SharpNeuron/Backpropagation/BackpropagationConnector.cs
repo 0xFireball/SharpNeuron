@@ -8,7 +8,6 @@ namespace SharpNeuron.Backpropagation
     /// A Backpropagation Connector is an <see cref="IConnector"/> which consists of a collection of
     /// backpropagation synapses connecting two activation layers.
     /// </summary>
-    [Serializable]
     public class BackpropagationConnector
         : Connector<ActivationLayer, ActivationLayer, BackpropagationSynapse>
     {
@@ -63,59 +62,6 @@ namespace SharpNeuron.Backpropagation
             : base(sourceLayer, targetLayer, connectionMode)
         {
             ConstructSynapses();
-        }
-
-        /// <summary>
-        /// Deserialization Constructor
-        /// </summary>
-        /// <param name="info">
-        /// Serialization information to deserialize and obtain the data
-        /// </param>
-        /// <param name="context">
-        /// Serialization context to use
-        /// </param>
-        /// <exception cref="ArgumentNullException">
-        /// If <c>info</c> is <c>null</c>
-        /// </exception>
-        public BackpropagationConnector(SerializationInfo info, StreamingContext context)
-            : base(info, context)
-        {
-            ConstructSynapses();
-
-            momentum = info.GetDouble("momentum");
-            double[] weights = (double[])info.GetValue("weights", typeof(double[]));
-
-            for (int i = 0; i < synapses.Length; i++)
-            {
-                synapses[i].Weight = weights[i];
-            }
-        }
-
-        /// <summary>
-        /// Populates the serialization info with the data needed to serialize the connector
-        /// </summary>
-        /// <param name="info">
-        /// The serialization info to populate the data with
-        /// </param>
-        /// <param name="context">
-        /// The serialization context to use
-        /// </param>
-        /// <exception cref="ArgumentNullException">
-        /// If <c>info</c> is <c>null</c>
-        /// </exception>
-        public override void GetObjectData(SerializationInfo info, StreamingContext context)
-        {
-            base.GetObjectData(info, context);
-
-            info.AddValue("momentum", momentum);
-
-            double[] weights = new double[synapses.Length];
-            for (int i = 0; i < synapses.Length; i++)
-            {
-                weights[i] = synapses[i].Weight;
-            }
-
-            info.AddValue("weights", weights, typeof(double[]));
         }
 
         /// <summary>

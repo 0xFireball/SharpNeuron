@@ -7,7 +7,7 @@ namespace SharpNeuron.LearningRateFunctions
     /// Exponential Learning Rate Function. As training progresses, The learning rate exponentially
     /// changes from its initial value to the final value.
     /// </summary>
-    [Serializable]
+    
     public sealed class ExponentialFunction : AbstractFunction
     {
         private readonly double logFinalByInitial;
@@ -24,26 +24,6 @@ namespace SharpNeuron.LearningRateFunctions
         /// </param>
         public ExponentialFunction(double initialLearningRate, double finalLearningRate)
             : base(initialLearningRate, finalLearningRate)
-        {
-            logFinalByInitial
-                = Math.Log(Math.Max(initialLearningRate, initialLearningRate + 1e-4)
-                / Math.Max(finalLearningRate, finalLearningRate + 1e-4));
-        }
-
-        /// <summary>
-        /// Deserialization Constructor
-        /// </summary>
-        /// <param name="info">
-        /// Serialization information to deserialize and obtain the data
-        /// </param>
-        /// <param name="context">
-        /// Serialization context to use
-        /// </param>
-        /// <exception cref="ArgumentNullException">
-        /// if <c>info</c> is <c>null</c>
-        /// </exception>
-        public ExponentialFunction(SerializationInfo info, StreamingContext context)
-            : base(info, context)
         {
             logFinalByInitial
                 = Math.Log(Math.Max(initialLearningRate, initialLearningRate + 1e-4)

@@ -6,7 +6,6 @@ namespace SharpNeuron.Backpropagation
     /// <summary>
     /// Activation Layer is a layer of activation neurons.
     /// </summary>
-    [Serializable]
     public abstract class ActivationLayer : Layer<ActivationNeuron>
     {
         private bool useFixedBiasValues = false;
@@ -39,58 +38,6 @@ namespace SharpNeuron.Backpropagation
             {
                 neurons[i] = new ActivationNeuron(this);
             }
-        }
-
-        /// <summary>
-        /// Deserialization Constructor
-        /// </summary>
-        /// <param name="info">
-        /// Serialization information to deserialize and obtain the data
-        /// </param>
-        /// <param name="context">
-        /// Serialization context to use
-        /// </param>
-        /// <exception cref="ArgumentNullException">
-        /// If <c>info</c> is <c>null</c>
-        /// </exception>
-        public ActivationLayer(SerializationInfo info, StreamingContext context)
-            : base(info, context)
-        {
-            useFixedBiasValues = info.GetBoolean(nameof(useFixedBiasValues));
-
-            double[] biasValues = (double[])info.GetValue(nameof(biasValues), typeof(double[]));
-            for (int i = 0; i < biasValues.Length; i++)
-            {
-                neurons[i] = new ActivationNeuron(this);
-                neurons[i].Bias = biasValues[i];
-            }
-        }
-
-        /// <summary>
-        /// Populates the serialization info with the data needed to serialize the layer
-        /// </summary>
-        /// <param name="info">
-        /// The serialization info to populate the data with
-        /// </param>
-        /// <param name="context">
-        /// The serialization context to use
-        /// </param>
-        /// <exception cref="ArgumentNullException">
-        /// If <c>info</c> is <c>null</c>
-        /// </exception>
-        public override void GetObjectData(SerializationInfo info, StreamingContext context)
-        {
-            base.GetObjectData(info, context);
-
-            info.AddValue("useFixedBiasValues", useFixedBiasValues);
-
-            double[] biasValues = new double[neurons.Length];
-            for (int i = 0; i < neurons.Length; i++)
-            {
-                biasValues[i] = neurons[i].Bias;
-            }
-
-            info.AddValue(nameof(biasValues), biasValues, typeof(double[]));
         }
 
         /// <summary>

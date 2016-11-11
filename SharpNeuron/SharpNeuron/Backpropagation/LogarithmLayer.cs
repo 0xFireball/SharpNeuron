@@ -7,7 +7,6 @@ namespace SharpNeuron.Backpropagation
     /// <summary>
     /// An <see cref="ActivationLayer"/> using logarithmic activation function
     /// </summary>
-    [Serializable]
     public class LogarithmLayer : ActivationLayer
     {
         /// <summary>
@@ -57,23 +56,6 @@ namespace SharpNeuron.Backpropagation
         public override double Derivative(double input, double output)
         {
             return 1d / (1 + Math.Abs(input));
-        }
-
-        /// <summary>
-        /// Deserialization constructor
-        /// </summary>
-        /// <param name="info">
-        /// The info to deserialize
-        /// </param>
-        /// <param name="context">
-        /// The serialization context to use
-        /// </param>
-        /// <exception cref="ArgumentNullException">
-        /// If <c>info</c> is <c>null</c>
-        /// </exception>
-        public LogarithmLayer(SerializationInfo info, StreamingContext context)
-            : base(info, context)
-        {
         }
     }
 }

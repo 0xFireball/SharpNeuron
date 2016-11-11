@@ -8,7 +8,6 @@ namespace SharpNeuron.Initializers
     /// <summary>
     /// An <see cref="IInitializer"/> using constant function
     /// </summary>
-    [Serializable]
     public class ConstantFunction : IInitializer
     {
         private readonly double constant;
@@ -33,42 +32,6 @@ namespace SharpNeuron.Initializers
         public ConstantFunction(double constant)
         {
             this.constant = constant;
-        }
-
-        /// <summary>
-        /// Deserialization Constructor
-        /// </summary>
-        /// <param name="info">
-        /// Serialization information to deserialize and obtain the data
-        /// </param>
-        /// <param name="context">
-        /// Serialization context to use
-        /// </param>
-        /// <exception cref="ArgumentNullException">
-        /// If <c>info</c> is <c>null</c>
-        /// </exception>
-        public ConstantFunction(SerializationInfo info, StreamingContext context)
-        {
-            Helper.ValidateNotNull(info, "info");
-            constant = info.GetDouble("constant");
-        }
-
-        /// <summary>
-        /// Populates the serialization info with the data needed to serialize the initializer
-        /// </summary>
-        /// <param name="info">
-        /// The serialization info to populate the data with
-        /// </param>
-        /// <param name="context">
-        /// The serialization context to use
-        /// </param>
-        /// <exception cref="ArgumentNullException">
-        /// If <c>info</c> is <c>null</c>
-        /// </exception>
-        public virtual void GetObjectData(SerializationInfo info, StreamingContext context)
-        {
-            Helper.ValidateNotNull(info, "info");
-            info.AddValue("constant", constant);
         }
 
         /// <summary>

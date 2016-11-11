@@ -10,7 +10,7 @@ namespace SharpNeuron
     /// connected to each other.
     /// </summary>
     /// <typeparam name="TNeuron">Type of Neurons in the layer</typeparam>
-    [Serializable]
+    
     public abstract class Layer<TNeuron> : ILayer where TNeuron : INeuron
     {
         /// <summary>
@@ -170,58 +170,10 @@ namespace SharpNeuron
         /// </exception>
         protected Layer(int neuronCount)
         {
-            Helper.ValidatePositive(neuronCount, "neuronCount");
+            Helper.ValidatePositive(neuronCount, nameof(neuronCount));
 
             neurons = new TNeuron[neuronCount];
             learningRateFunction = new LinearFunction(0.3d, 0.05d);
-        }
-
-        /// <summary>
-        /// Deserialization Constructor
-        /// </summary>
-        /// <param name="info">
-        /// Serialization information to deserialize and obtain the data
-        /// </param>
-        /// <param name="context">
-        /// Serialization context to use
-        /// </param>
-        /// <exception cref="ArgumentNullException">
-        /// If <c>info</c> is <c>null</c>
-        /// </exception>
-        protected Layer(SerializationInfo info, StreamingContext context)
-        {
-            // Validate
-            Helper.ValidateNotNull(info, "info");
-
-            // Deserialize
-            int neuronCount = info.GetInt32("neuronCount");
-            neurons = new TNeuron[neuronCount];
-
-            initializer = info.GetValue("initializer", typeof(IInitializer)) as IInitializer;
-            learningRateFunction = info.GetValue("learningRateFunction", typeof(ILearningRateFunction)) as ILearningRateFunction;
-        }
-
-        /// <summary>
-        /// Populates the serialization info with the data needed to serialize the layer
-        /// </summary>
-        /// <param name="info">
-        /// The serialization info to populate the data with
-        /// </param>
-        /// <param name="context">
-        /// The serialization context to use
-        /// </param>
-        /// <exception cref="ArgumentNullException">
-        /// If <c>info</c> is <c>null</c>
-        /// </exception>
-        public virtual void GetObjectData(SerializationInfo info, StreamingContext context)
-        {
-            // Validate
-            Helper.ValidateNotNull(info, "info");
-
-            // Populate
-            info.AddValue("neuronCount", neurons.Length);
-            info.AddValue("initializer", initializer, typeof(IInitializer));
-            info.AddValue("learningRateFunction", learningRateFunction, typeof(ILearningRateFunction));
         }
 
         /// <summary>

@@ -7,7 +7,7 @@ namespace SharpNeuron.SOM
     /// the neighborhood of every neuron with respect to winner neuron. This function depends
     /// on the the shape of the layer and also on the training progress.
     /// </summary>
-    public interface INeighborhoodFunction : ISerializable
+    public interface INeighborhoodFunction
     {
         /// <summary>
         /// Determines the neighborhood of every neuron in the given Kohonen layer with respect

@@ -7,8 +7,7 @@ namespace SharpNeuron
     /// <summary>
     /// A Training Set represents a set of training samples used during 'batch training' process.
     /// </summary>
-    [Serializable]
-    public sealed class TrainingSet : ISerializable
+    public sealed class TrainingSet
     {
         private readonly int inputVectorLength;
         private readonly int outputVectorLength;
@@ -121,48 +120,6 @@ namespace SharpNeuron
             this.inputVectorLength = inputVectorLength;
             this.outputVectorLength = outputVectorLength;
             trainingSamples = new List<TrainingSample>();
-        }
-
-        /// <summary>
-        /// Deserialization Constructor
-        /// </summary>
-        /// <param name="info">
-        /// Serialization information to deserialize and obtain the data
-        /// </param>
-        /// <param name="context">
-        /// Serialization context to use
-        /// </param>
-        /// <exception cref="ArgumentNullException">
-        /// If <c>info</c> is <c>null</c>
-        /// </exception>
-        public TrainingSet(SerializationInfo info, StreamingContext context)
-        {
-            Helper.ValidateNotNull(info, "info");
-
-            inputVectorLength = info.GetInt32("inputVectorLength");
-            outputVectorLength = info.GetInt32("outputVectorLength");
-            trainingSamples = info.GetValue("trainingSamples", typeof(IList<TrainingSample>)) as IList<TrainingSample>;
-        }
-
-        /// <summary>
-        /// Populates the serialization info with the data needed to serialize the training set
-        /// </summary>
-        /// <param name="info">
-        /// The serialization info to populate the data with
-        /// </param>
-        /// <param name="context">
-        /// The serialization context to use
-        /// </param>
-        /// <exception cref="ArgumentNullException">
-        /// If <c>info</c> is <c>null</c>
-        /// </exception>
-        public void GetObjectData(SerializationInfo info, StreamingContext context)
-        {
-            Helper.ValidateNotNull(info, "info");
-
-            info.AddValue("inputVectorLength", inputVectorLength);
-            info.AddValue("outputVectorLength", outputVectorLength);
-            info.AddValue("trainingSamples", trainingSamples, typeof(IList<TrainingSample>));
         }
 
         /// <summary>

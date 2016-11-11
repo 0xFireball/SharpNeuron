@@ -6,7 +6,7 @@ namespace SharpNeuron.SOM
     /// <summary>
     /// This class extends a <see cref="Network"/> and represents a Kohonen Self-Organizing Map.
     /// </summary>
-    [Serializable]
+    
     public class KohonenNetwork : Network
     {
         /// <summary>
@@ -37,23 +37,6 @@ namespace SharpNeuron.SOM
         /// </exception>
         public KohonenNetwork(ILayer inputLayer, KohonenLayer outputLayer)
             : base(inputLayer, outputLayer, TrainingMethod.Unsupervised)
-        {
-        }
-
-        /// <summary>
-        /// Deserialization Constructor
-        /// </summary>
-        /// <param name="info">
-        /// Serialization information to deserialize and obtain the data
-        /// </param>
-        /// <param name="context">
-        /// Serialization context to use
-        /// </param>
-        /// <exception cref="ArgumentNullException">
-        /// If <c>info</c> is <c>null</c>
-        /// </exception>
-        public KohonenNetwork(SerializationInfo info, StreamingContext context)
-            : base(info, context)
         {
         }
 

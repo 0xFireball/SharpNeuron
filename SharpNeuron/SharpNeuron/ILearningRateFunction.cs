@@ -6,7 +6,7 @@ namespace SharpNeuron
     /// Learning Rate Function interface. This interface defines the way in which learning rate
     /// changes from its initial value to its final value as the training progresses.
     /// </summary>
-    public interface ILearningRateFunction : ISerializable
+    public interface ILearningRateFunction
     {
         /// <summary>
         /// Gets the initial value of learning rate

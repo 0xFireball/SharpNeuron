@@ -6,7 +6,6 @@ namespace SharpNeuron.Backpropagation
     /// <summary>
     /// An <see cref="ActivationLayer"/> using linear activation function
     /// </summary>
-    [Serializable]
     public class LinearLayer : ActivationLayer
     {
         /// <summary>
@@ -56,23 +55,6 @@ namespace SharpNeuron.Backpropagation
         public override double Derivative(double input, double output)
         {
             return 1d;
-        }
-
-        /// <summary>
-        /// Deserialization constructor
-        /// </summary>
-        /// <param name="info">
-        /// The info to deserialize
-        /// </param>
-        /// <param name="context">
-        /// The serialization context to use
-        /// </param>
-        /// <exception cref="ArgumentNullException">
-        /// If <c>info</c> is <c>null</c>
-        /// </exception>
-        public LinearLayer(SerializationInfo info, StreamingContext context)
-            : base(info, context)
-        {
         }
     }
 }

@@ -9,7 +9,6 @@ namespace SharpNeuron.SOM.NeighborhoodFunctions
     /// a negative value at a certain point (forming an inhibitory influence) and then gradually
     /// increasing to zero.
     /// </summary>
-    [Serializable]
     public sealed class MexicanHatFunction : INeighborhoodFunction
     {
         /*
@@ -62,42 +61,6 @@ namespace SharpNeuron.SOM.NeighborhoodFunctions
             // so, learning radius = 0.62593765 * sigma
 
             sigma = learningRadius / 0.6259d;
-        }
-
-        /// <summary>
-        /// Deserialization Constructor
-        /// </summary>
-        /// <param name="info">
-        /// Serialization information to deserialize and obtain the data
-        /// </param>
-        /// <param name="context">
-        /// Serialization context to use
-        /// </param>
-        /// <exception cref="ArgumentNullException">
-        /// If <c>info</c> is <c>null</c>
-        /// </exception>
-        public MexicanHatFunction(SerializationInfo info, StreamingContext context)
-        {
-            Helper.ValidateNotNull(info, "info");
-            sigma = info.GetDouble("sigma");
-        }
-
-        /// <summary>
-        /// Populates the serialization info with the data needed to serialize the neighborhood function
-        /// </summary>
-        /// <param name="info">
-        /// The serialization info to populate the data with
-        /// </param>
-        /// <param name="context">
-        /// The serialization context to use
-        /// </param>
-        /// <exception cref="ArgumentNullException">
-        /// If <c>info</c> is <c>null</c>
-        /// </exception>
-        public void GetObjectData(SerializationInfo info, StreamingContext context)
-        {
-            Helper.ValidateNotNull(info, "info");
-            info.AddValue("sigma", sigma);
         }
 
         /// <summary>
