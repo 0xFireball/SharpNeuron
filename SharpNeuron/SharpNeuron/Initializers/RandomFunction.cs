@@ -74,7 +74,7 @@ namespace SharpNeuron.Initializers
             Helper.ValidateNotNull(activationLayer, "layer");
             foreach (ActivationNeuron neuron in activationLayer.Neurons)
             {
-                neuron.bias = Helper.GetRandom(minLimit, maxLimit);
+                neuron.Bias = Helper.GetRandom(minLimit, maxLimit);
             }
         }
 

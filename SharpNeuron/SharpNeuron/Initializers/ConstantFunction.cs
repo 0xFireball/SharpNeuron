@@ -48,7 +48,7 @@ namespace SharpNeuron.Initializers
             Helper.ValidateNotNull(activationLayer, "layer");
             foreach (ActivationNeuron neuron in activationLayer.Neurons)
             {
-                neuron.bias = constant;
+                neuron.Bias = constant;
             }
         }
 

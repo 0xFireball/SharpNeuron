@@ -65,7 +65,7 @@ namespace SharpNeuron.Initializers
 
             foreach (ActivationNeuron neuron in activationLayer.Neurons)
             {
-                neuron.bias = Helper.GetRandom(-nGuyenWidrowFactor, nGuyenWidrowFactor);
+                neuron.Bias = Helper.GetRandom(-nGuyenWidrowFactor, nGuyenWidrowFactor);
             }
         }
 

@@ -33,7 +33,7 @@ namespace SharpNeuron.Initializers
             double[] normalized = Helper.GetRandomVector(activationLayer.NeuronCount, 1d);
             foreach (ActivationNeuron neuron in activationLayer.Neurons)
             {
-                neuron.bias = normalized[i++];
+                neuron.Bias = normalized[i++];
             }
         }
 

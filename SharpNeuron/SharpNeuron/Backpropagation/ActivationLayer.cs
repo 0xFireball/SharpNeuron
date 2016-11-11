@@ -8,7 +8,7 @@ namespace SharpNeuron.Backpropagation
     /// </summary>
     public abstract class ActivationLayer : Layer<ActivationNeuron>
     {
-        private bool useFixedBiasValues = false;
+        protected bool useFixedBiasValues = false;
 
         /// <summary>
         /// Gets or sets a boolean representing whether to use fixed neuron bias values. If this is false, the bias value will change during learning.
