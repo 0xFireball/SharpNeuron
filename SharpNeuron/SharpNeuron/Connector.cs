@@ -1,7 +1,6 @@
 ﻿using SharpNeuron.Initializers;
 using System;
 using System.Collections.Generic;
-using System.Runtime.Serialization;
 
 namespace SharpNeuron
 {
@@ -11,7 +10,7 @@ namespace SharpNeuron
     /// <typeparam name="TSourceLayer">Type of Source Layer</typeparam>
     /// <typeparam name="TTargetLayer">Type of Target Layer</typeparam>
     /// <typeparam name="TSynapse">Type of Synapse</typeparam>
-    
+
     public abstract class Connector<TSourceLayer, TTargetLayer, TSynapse> : IConnector
         where TSourceLayer : ILayer
         where TTargetLayer : ILayer

@@ -1,7 +1,6 @@
 ﻿using SharpNeuron.LearningRateFunctions;
 using System;
 using System.Collections.Generic;
-using System.Runtime.Serialization;
 
 namespace SharpNeuron
 {
@@ -10,7 +9,7 @@ namespace SharpNeuron
     /// connected to each other.
     /// </summary>
     /// <typeparam name="TNeuron">Type of Neurons in the layer</typeparam>
-    
+
     public abstract class Layer<TNeuron> : ILayer where TNeuron : INeuron
     {
         /// <summary>

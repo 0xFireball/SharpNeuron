@@ -1,6 +1,4 @@
-﻿using System.Runtime.Serialization;
-
-namespace SharpNeuron
+﻿namespace SharpNeuron
 {
     /// <summary>
     /// Learning Rate Function interface. This interface defines the way in which learning rate

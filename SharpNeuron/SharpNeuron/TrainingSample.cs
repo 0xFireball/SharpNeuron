@@ -1,7 +1,4 @@
-﻿using System;
-using System.Runtime.Serialization;
-
-namespace SharpNeuron
+﻿namespace SharpNeuron
 {
     /// <summary>
     /// This class represents a training sample used to train a neural network

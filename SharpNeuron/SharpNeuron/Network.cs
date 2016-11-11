@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Runtime.Serialization;
 
 namespace SharpNeuron
 {
@@ -27,7 +26,7 @@ namespace SharpNeuron
     /// network against a particular input.
     /// </para>
     /// </summary>
-    
+
     public abstract class Network : INetwork
     {
         /// <summary>

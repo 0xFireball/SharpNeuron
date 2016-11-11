@@ -1,7 +1,6 @@
 ﻿using SharpNeuron.SOM.NeighborhoodFunctions;
 using SharpNeuron.Types;
 using System;
-using System.Runtime.Serialization;
 
 namespace SharpNeuron.SOM
 {

@@ -1,6 +1,4 @@
 ﻿using SharpNeuron.Initializers;
-using System;
-using System.Runtime.Serialization;
 
 namespace SharpNeuron.SOM
 {

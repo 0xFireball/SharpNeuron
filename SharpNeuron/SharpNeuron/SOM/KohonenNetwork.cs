@@ -1,12 +1,9 @@
-﻿using System;
-using System.Runtime.Serialization;
-
-namespace SharpNeuron.SOM
+﻿namespace SharpNeuron.SOM
 {
     /// <summary>
     /// This class extends a <see cref="Network"/> and represents a Kohonen Self-Organizing Map.
     /// </summary>
-    
+
     public class KohonenNetwork : Network
     {
         /// <summary>
