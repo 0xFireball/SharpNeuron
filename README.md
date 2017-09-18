@@ -1,10 +1,10 @@
 
-# SharpNeruon
+# SharpNeuron
 
-SharpNeuron is a .NET Core Neural Network library based on [NeronDotNet](https://sourceforge.net/projects/neurondotnet/), which seems to have been abandoned.
+SharpNeuron is a .NET Core Neural Network library based on [NeuronDotNet](https://sourceforge.net/projects/neurondotnet/), which seems to have been abandoned.
 The vast majority of the code comes directly from NeuronDotNet.
 
-SharpNeruon consists of purely managed code that is written for .NET Core (`.NETStandard1.6` profile)
+SharpNeuron consists of purely managed code that is written for .NET Core (`.NETStandard1.6` profile)
 and will run on any .NET Core supported platform, including Windows, macOS and Linux.
 
 ## About this project
